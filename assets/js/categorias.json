@@ -1,0 +1,37 @@
+[
+  {
+    "idCat": 1,
+    "nomeCat": "Linha Tradicional",
+    "slugCat": "linha-tradicional"
+  },
+  {
+    "idCat": 2,
+    "nomeCat": "Linha Extra",
+    "slugCat": "linha-extra"
+  },
+  {
+    "idCat": 3,
+    "nomeCat": "Linha Premium",
+    "slugCat": "linha-premium"
+  },
+  {
+    "idCat": 4,
+    "nomeCat": "Bolos e Tortas",
+    "slugCat": "bolos-e-tortas"
+  },
+  {
+    "idCat": 5,
+    "nomeCat": "Recheios",
+    "slugCat": "recheios"
+  },
+  {
+    "idCat": 6,
+    "nomeCat": "Salgados",
+    "slugCat": "salgados"
+  },
+  {
+    "idCat": 7,
+    "nomeCat": "Pão de Queijo",
+    "slugCat": "pao-de-queijo"
+  }
+]

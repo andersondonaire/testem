@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirecionar todas as solicitações que não correspondem a arquivos existentes ou diretórios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.html [L,QSA]

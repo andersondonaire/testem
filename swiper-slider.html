@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper-container-video {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide-video {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .swiper-slide-video img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .swiper-slide-video video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="width: 400px; height: 150px">
+      <div class="swiper-container-video">
+        <div class="swiper-wrapper w-100 h-100" style="display: flex">
+          <div
+            class="swiper-slide swiper-slide-video"
+            data-video-ref="videos/institucional_2024.mp4"
+          >
+            <img
+              data-video-ref="videos/institucional_2024.mp4"
+              class="swiper-imageRef"
+              src="assets/img/imgVideos/2.jpg"
+              alt=""
+            />
+          </div>
+          <div
+            class="swiper-slide swiper-slide-video"
+            data-video-ref="videos/feira.mp4"
+          >
+            <img
+              data-video-ref="videos/feira.mp4"
+              class="swiper-imageRef"
+              src="assets/img/imgVideos/1.jpg"
+              alt=""
+            />
+          </div>
+          <div
+            class="swiper-slide swiper-slide-video"
+            data-video-ref="videos/video3.mp4"
+          >
+            <img
+              data-video-ref="videos/video3.mp4"
+              class="swiper-imageRef"
+              src="assets/img/imgVideos/3.jpg"
+              alt=""
+            />
+          </div>
+          <div class="swiper-pagination-video"></div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div style="width: 400px; height: 200px">
+      <video
+        src="videos/institucional_2024.mp4"
+        class="h-100 w-100 swiper-video"
+        autoplay
+        controls
+        muted
+      ></video>
+      <video
+        class="h-100 w-100 swiper-video"
+        style="display: none"
+        src="videos/feira.mp4"
+        controls
+        muted
+      ></video>
+      <video
+        class="h-100 w-100 swiper-video"
+        src="videos/video3.mp4"
+        style="display: none"
+        controls
+        muted
+      ></video>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper-container-video", {
+        slidesPerView: 2,
+        centeredSlides: true,
+        spaceBetween: 15,
+        freeMode: true,
+        autoplay: {
+          delay: 15000,
+        },
+        pagination: {
+          el: ".swiper-pagination-video",
+          clickable: true,
+          bulletClass: "swiper-pagination-bullet",
+          bulletActiveClass: "swiper-pagination-bullet-active",
+        },
+        on: {
+          slideChangeTransitionStart: function (e) {
+            let videos = document.querySelectorAll(".swiper-video");
+            videos.forEach((video) => {
+              video.currentTime = 0;
+              video.pause();
+              video.style.display = "none";
+              if (
+                document
+                  .querySelectorAll(".swiper-imageRef")
+                  [e.activeIndex].getAttribute("data-video-ref") ===
+                video.getAttribute("src")
+              ) {
+                video.style.display = "block";
+                video.play();
+              }
+            });
+          },
+        },
+      });
+      $(".swiper-slide-video").on("click", function (e) {
+        let videos = document.querySelectorAll(".swiper-video");
+        videos.forEach((video) => {
+          video.currentTime = 0;
+          video.pause();
+          video.style.display = "none";
+          if (
+            e.target.getAttribute("data-video-ref") == video.getAttribute("src")
+          ) {
+            video.style.display = "block";
+            video.play();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

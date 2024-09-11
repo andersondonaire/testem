@@ -1,0 +1,437 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+<style>
+  .icon-combination {
+    position: relative;
+    display: inline-block;
+    font-size: 45px;
+  }
+  .icon-combination .fa-clipboard-list {
+    position: relative;
+  }
+  .icon-combination .fa-cog {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    font-size: 0.5em;
+  }
+  .ic-menu,
+  .ic-menu::before,
+  .ic-menu::after {
+    background-color: #026338 !important;
+  }
+  #ProductsDetail .section__details .custom__group {
+    gap: 20px;
+  }
+  @media (max-width: 400px) {
+    #ProductsDetail
+      .section__details
+      .custom__group
+      .custom__group--content
+      span {
+      font-size: 0.85rem !important;
+    }
+    #ProductsDetail
+      .section__details
+      .custom__group
+      .custom__group--content
+      .box {
+      width: 35px !important;
+    }
+    #ProductsDetail .section__details .custom__group {
+      gap: 15px;
+    }
+    .icon-combination {
+      font-size: 35px;
+    }
+    .icon-combination .fa-clipboard-list {
+      position: relative;
+    }
+    .icon-combination .fa-cog {
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+      font-size: 0.4em;
+      color: gray;
+    }
+  }
+  @media (max-width: 360px) {
+    #ProductsDetail
+      .section__details
+      .custom__group
+      .custom__group--content
+      span {
+      font-size: 0.7rem !important;
+    }
+    #ProductsDetail
+      .section__details
+      .custom__group
+      .custom__group--content
+      .box {
+      width: 30px !important;
+    }
+    #ProductsDetail .section__details .custom__group {
+      gap: 10px;
+    }
+  }
+</style>
+
+<main id="Content">
+  <section id="ProductsDetail">
+    <section class="section__details">
+      <nav
+        class="nav__categories position-fixed"
+        data-plugin="os-animation"
+        data-os-animation="fadeInLeft"
+        data-os-animation-offset="100%"
+        data-os-animation-delay="0.80s"
+        data-os-animation-duration="0.50s"
+      >
+        <ul>
+          <li>
+            <a
+              class="iconLink"
+              data-href-link="/linha-tradicional"
+              href="/linha-tradicional"
+              data-toggle="tooltip"
+              data-placement="right"
+              title="Tradicional"
+            >
+              <img
+                src="assets/img/icons/prodIcons/pao.png?mode=pad"
+                style="width: 40px; height: 30px"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="iconLink"
+              data-href-link="/linha-extra"
+              href="/linha-extra"
+              data-toggle="tooltip"
+              data-placement="right"
+              title="Extra"
+            >
+              <img
+                src="assets/img/icons/prodIcons/paoDeMel.png?mode=pad"
+                style="width: 40px; height: 30px"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="iconLink"
+              data-href-link="/linha-premium"
+              href="/linha-premium"
+              data-toggle="tooltip"
+              data-placement="right"
+              title="Premium"
+            >
+              <img
+                src="assets/img/icons/prodIcons/fatiaHungara.png?mode=pad"
+                style="width: 40px; height: 30px"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              class="iconLink"
+              data-href-link="/salgados"
+              href="/salgados"
+              data-toggle="tooltip"
+              data-placement="right"
+              title="Salgados"
+            >
+              <img
+                src="assets/img/icons/prodIcons/salgado.png?mode=pad"
+                style="width: 40px; height: 30px"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="iconLink"
+              data-href-link="/bolos-e-tortas"
+              href="/bolos-e-tortas"
+              data-toggle="tooltip"
+              data-placement="right"
+              title="Bolos e Tortas"
+            >
+              <img
+                src="assets/img/icons/prodIcons/torta.png?mode=pad"
+                style="width: 40px; height: 30px"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="iconLink"
+              data-href-link="/pao-de-queijo"
+              href="/pao-de-queijo"
+              data-toggle="tooltip"
+              data-placement="right"
+              title="Pão de Queijo"
+            >
+              <img
+                src="assets/img/icons/prodIcons/paoDeQueijo.png?mode=pad"
+                style="width: 40px; height: 30px"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="iconLink"
+              data-href-link="/recheios"
+              href="/recheios"
+              data-toggle="tooltip"
+              data-placement="right"
+              title="Recheios"
+            >
+              <img
+                src="assets/img/icons/prodIcons/recheio.png?mode=pad"
+                style="width: 40px; height: 30px"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="container-fluid h-100">
+        <div class="row h-100 d-flex align-items-center">
+          <div
+            class="product__detail col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12"
+          >
+            <h1
+              class="size--s48 font--bree-ligh text--primary title mb-md-5 mb-3"
+              data-layer-title
+              data-plugin="os-animation"
+              data-os-animation="fadeInLeft"
+              data-os-animation-offset="100%"
+              data-os-animation-delay="0.00s"
+              data-os-animation-duration="0.50s"
+              id="title-prod"
+            >
+              Pão Francês 50g
+            </h1>
+
+            <div
+              class="custom__group"
+              data-plugin="os-animation"
+              data-os-animation="fadeInLeft"
+              data-os-animation-offset="100%"
+              data-os-animation-delay="0.50s"
+              data-os-animation-duration="0.50s"
+            >
+              <div class="custom__group--content">
+                <span class="size--s21 text-dark box">REF.</span>
+                <span class="size--s14 text-dark"> 039</span>
+              </div>
+              <div class="custom__group--content">
+                <span class="size--s21 text-dark box">
+                  <img
+                    src="assets/img/icons/prodDetailsIcons/balanca.png"
+                    alt="100g"
+                    class="img-fluid"
+                  />
+                </span>
+                <span class="size--s14 text-dark" id="peso-uni"> 50g</span>
+              </div>
+              <div class="custom__group--content">
+                <span class="size--s21 text-dark box">
+                  <img
+                    src="assets/img/icons/prodDetailsIcons/caixa.png"
+                    alt="70"
+                    class="img-fluid"
+                  />
+                </span>
+                <span class="size--s14 text-dark" id="peso-pacot">
+                  10,5 kg</span
+                >
+              </div>
+              <!-- <a class="custom__group--content" href="/">
+                <span class="size--s21 text-dark box">
+                  <div class="icon-combination">
+                    <img
+                      src="assets/img/icons/prodDetailsIcons/ficha-tecnica.png"
+                      alt="70"
+                      class="img-fluid"
+                    />
+                  </div>
+                </span>
+                <span class="size--s14 text-dark" style="width: 60px"
+                  >Ficha Técnica</span
+                >
+              </a> -->
+            </div>
+          </div>
+          <div
+            class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 position-relative text-center d-flex justify-content-between flex-column align-items-center h-100"
+          >
+            <div>
+              <div class="box--image">
+                <figure class="d-flex justify-content-center">
+                  <img
+                    src="assets/img/produtos/frances.png?w=400&amp;h=100&amp;mode=pad"
+                    class="img-fluid mx-auto"
+                    data-plugin="os-animation"
+                    data-os-animation="zoomIn"
+                    data-os-animation-offset="100%"
+                    data-os-animation-delay="0.90s"
+                    data-os-animation-duration="0.50s"
+                    id="image-prod"
+                  />
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-2 col-md-12 col-sm-12 col-12"></div>
+        </div>
+        <div class="detail-preparation row align-items-center">
+          <div class="col-xl-4 col-lg-0 col-md-12 col-sm-12 col-12"></div>
+          <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12 col-12">
+            <div>
+              <div>
+                <p
+                  class="size--s18 mb-3 text-md-left text-center text-dark"
+                  data-plugin="os-animation"
+                  data-os-animation="fadeInDown"
+                  data-os-animation-offset="100%"
+                  data-os-animation-delay="0.70s"
+                  data-os-animation-duration="0.50s"
+                >
+                  Modo de preparação:
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-md-start justify-content-center w-100 mb-4 text-center product__faqsheets"
+                  data-plugin="os-animation"
+                  data-os-animation="fadeInDown"
+                  data-os-animation-offset="100%"
+                  data-os-animation-delay="0.80s"
+                  data-os-animation-duration="0.50s"
+                >
+                  <div
+                    class="custom__group--content pr-4"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Tempo de descongela&#xE7;&#xE3;o"
+                  >
+                    <span class="size--s21 text-dark box">
+                      <img
+                        src="assets/img/icons/prodDetailsIcons/preparacao.png"
+                        alt="15-20 min"
+                        class="img-fluid"
+                      />
+                    </span>
+                    <span class="size--s14 text-dark"> 1 hora</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12 col-12">
+            <div class="">
+              <div class="mx-md-3">
+                <p
+                  class="size--s18 mb-3 text-md-left text-center text-dark"
+                  data-plugin="os-animation"
+                  data-os-animation="fadeInDown"
+                  data-os-animation-offset="100%"
+                  data-os-animation-delay="0.70s"
+                  data-os-animation-duration="0.50s"
+                >
+                  Sugestão para mais crocância:
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-md-start justify-content-center w-100 mb-4 text-center product__faqsheets"
+                  data-plugin="os-animation"
+                  data-os-animation="fadeInDown"
+                  data-os-animation-offset="100%"
+                  data-os-animation-delay="0.80s"
+                  data-os-animation-duration="0.50s"
+                >
+                  <div
+                    class="custom__group--content pr-4"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Temperatura do forno"
+                  >
+                    <span class="size--s2 text-dark box">
+                      <img
+                        src="assets/img/icons/prodDetailsIcons/temperatura.png"
+                        alt="200&#xBA;C"
+                        class="img-fluid"
+                      />
+                    </span>
+                    <span class="size--s14 text-dark"> 180°C</span>
+                  </div>
+                  <div
+                    class="custom__group--content pr-4"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Tempo de aquecimento"
+                  >
+                    <span class="size--s21 text-dark box">
+                      <img
+                        src="assets/img/icons/prodDetailsIcons/tempoForno.png"
+                        alt="8-12 min"
+                        class="img-fluid"
+                      />
+                    </span>
+                    <span class="size--s14 text-dark"> 15min</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+
+<script type="text/javascript" src="assets/js/script.js" defer></script>
+
+<script type="text/javascript" src="assets/js/product.detail.js" defer></script>
+<script>
+  $(function () {
+    async function loadProduto() {
+      var catsList;
+      var targetId;
+      var produto;
+      await $.get("assets/js/produtos.json", function (prods) {
+        $.each(prods, function (i, prod) {
+          if ("/" + prod.slug == window.location.pathname) {
+            produto = prod;
+          }
+        });
+      });
+      $.each($(".iconLink"), function (i, icon) {
+        if (
+          icon.getAttribute("data-href-link") ==
+          "/" + produto.slugCategoria
+        ) {
+          icon.classList.add("active");
+        }
+      });
+      console.log(produto.nomeProd);
+      $("#title-prod").empty();
+      $("#title-prod").append(`${produto.nomeProd}`);
+      $("#peso-uni").empty();
+      $("#peso-uni").append(produto.pesoUnitario);
+      $("#peso-pacot").empty();
+      $("#peso-pacot").append(produto.unPorCaixa);
+      $("#image-prod").attr("src", `assets/img/produtos/${produto.img_p}`);
+    }
+    loadProduto();
+  });
+</script>
+<script defer>
+  document.getElementById("preload").style.display = "none";
+</script>

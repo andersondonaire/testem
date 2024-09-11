@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+  <head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta charset="utf-8" />
+    <meta
+      id="viewport-meta"
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title id="pageTitle">Marquespan</title>
+    <meta
+      name="description"
+      content="Com mais de 200 produtos e uma dimens&#xE3;o que ultrapassa fronteiras, a tradi&#xE7;&#xE3;o e a inova&#xE7;&#xE3;o continuam a fazer parte do nosso ADN."
+    />
+    <meta name="keywords" content="marquespan" />
+    <meta name="author" content="" />
+    <meta name="referrer" content="origin" />
+    <meta name="robots" content="index,follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Home" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="./index.html" />
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="Marquespan" />
+
+    <link rel="shortcut" href="assets/img/icons/" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="assets/img/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/icons/favicon-16x16.png"
+    />
+    <link
+      rel="mask-icon"
+      href="assets/img/icons/safari-pinned-tab.html"
+      color="#5bbad5"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&amp;display=swap"
+      rel="stylesheet"
+      defer
+    />
+    <link rel="stylesheet" href="assets/plugins/aos/aos.css" />
+    <link
+      href="assets/css/style.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body data-lang="pt" id="content">
+    <style>
+      /* Estilo do preload */
+      #preload {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #1d1d1d;
+        /* Cor de fundo do site */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        /* Certifique-se de que o preload fica na frente de todo o conteúdo */
+      }
+
+      /* Estilo do spinner */
+      .spinner {
+        border: 8px solid #f3f3f3;
+        /* Cor de fundo do spinner (branco) */
+        border-top: 8px solid #006e00;
+        /* Cor do efeito de loading (logo) */
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+      }
+
+      /* Animação do spinner */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <!-- Preload -->
+    <div id="preload">
+      <div class="spinner"></div>
+    </div>
+    <script>
+      // script.js
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Verifica se estamos na página raiz
+        if (
+          window.location.pathname === "/" ||
+          window.location.pathname === "/index.html"
+        ) {
+          // Função para verificar a abertura do modal
+          function checkModalOpen() {
+            const modal = document.getElementById("videoModal");
+            const preload = document.getElementById("preload");
+
+            // Verifica se o modal e o preloader existem no DOM
+            if (modal && preload) {
+              // Verifica se o modal está visível
+              if (modal.style.display === "block") {
+                // Fecha o preloader
+                // Exibe o conteúdo do site
+                document.getElementById("content").style.display = "block";
+              }
+            }
+          }
+
+          // Verifica a cada 100ms se o modal foi aberto
+          const modalInterval = setInterval(function () {
+            // Obtém o vídeo após a abertura do modal
+            const video = document.getElementById("popupVideo");
+
+            if (video) {
+              // Quando o vídeo começar a tocar, para de verificar e esconde o preload
+              video.addEventListener("play", function () {
+                clearInterval(modalInterval);
+                checkModalOpen();
+              });
+            }
+          }, 100);
+        } else {
+          window.addEventListener("load", function () {
+            const preload = document.getElementById("preload");
+            const content = document.getElementById("content");
+          });
+        }
+      });
+    </script>
+    <header id="Header" class="">
+      <div class="d-flex align-items-center">
+        <button class="btn btn-link btn-menu p-0">
+          <span class="ic-menu"></span>
+        </button>
+        <div class="px-50 w-100">
+          <div class="row align-items-center no-gutters">
+            <div class="col-md-6 col-6">
+              <a href="/" class="logo" title="Home">
+                <img
+                  src="assets/img/logos/logo.png"
+                  class="img-fluid"
+                  alt="Home"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <header id="FullMenu">
+      <div class="d-flex align-items-md-center align-items-start">
+        <button class="btn btn-link btn-close py-0">
+          <i class="icon-close"></i>
+        </button>
+        <div class="px-50 w-100">
+          <div class="row align-items-center no-gutters">
+            <div class="col-md-3 col-6 mb-md-0 mb-sm-3 mb-0">
+              <a href="/" class="logo" title="Home">
+                <img
+                  src="assets/img/logos/logo.png"
+                  class="img-fluid"
+                  alt="Home"
+                  style="max-width: 95%"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu__box mt-5 mt-md-0">
+        <div class="w-100">
+          <div class="row align-items-center order-md-0 order-1">
+            <div class="col-sm-12 col-md-6 col-12 mb-sm-0 mb-3">
+              <nav>
+                <ul>
+                  <li class="li-pageRef" data-page="produtos">
+                    <a class="nav-link" href="/linha-tradicional">
+                      <span> Produtos </span>
+                    </a>
+                  </li>
+                  <li class="li-pageRef" data-page="empresa">
+                    <a class="nav-link" href="/empresa">
+                      <span> A Marquespan </span>
+                    </a>
+                  </li>
+                  <li class="li-pageRef" data-page="logistica">
+                    <a class="nav-link" href="/logistica">
+                      <span> logística </span>
+                    </a>
+                  </li>
+                  <li class="li-pageRef" data-page="eventos">
+                    <a class="nav-link btn-close redirect-link" href="#events">
+                      <span> eventos </span>
+                    </a>
+                  </li>
+                  <li class="li-pageRef" data-page="atendimentos">
+                    <a
+                      class="nav-link btn-close redirect-link"
+                      href="#atendimento"
+                    >
+                      <span> atendimento </span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-sm-12 col-md-6 col-12 mb-sm-0 mb-3">
+              <div class="menu__box--right">
+                <div class="row align-items-stretch justify-content-center">
+                  <div class="col-md-4 col-6 mb-md-4 mb-3">
+                    <a
+                      href="/linha-tradicional"
+                      title="Tradicional"
+                      class="category__box"
+                    >
+                      <figure>
+                        <img
+                          src="assets/img/icons/prodIcons/pao.png"
+                          class="img-fluid"
+                        />
+                      </figure>
+                      <p>Tradicional</p>
+                    </a>
+                  </div>
+                  <div class="col-md-4 col-6 mb-md-4 mb-3">
+                    <a
+                      href="/linha-extra"
+                      title="Padaria"
+                      class="category__box"
+                    >
+                      <figure>
+                        <img
+                          src="assets/img/icons/prodIcons/paoDeMel.png"
+                          class="img-fluid"
+                        />
+                      </figure>
+                      <p>Extra</p>
+                    </a>
+                  </div>
+                  <div class="col-md-4 col-6 mb-md-4 mb-3">
+                    <a
+                      href="/linha-premium"
+                      title="Pastelaria"
+                      class="category__box"
+                    >
+                      <figure>
+                        <img
+                          src="assets/img/icons/prodIcons/fatiaHungara.png"
+                          class="img-fluid"
+                        />
+                      </figure>
+                      <p>Premium</p>
+                    </a>
+                  </div>
+                  <div class="col-md-4 col-6 mb-md-4 mb-3">
+                    <a
+                      href="/bolos-e-tortas"
+                      title="Sazonal"
+                      class="category__box"
+                    >
+                      <figure>
+                        <img
+                          src="assets/img/icons/prodIcons/torta.png"
+                          class="img-fluid"
+                        />
+                      </figure>
+                      <p>Bolos e Tortas</p>
+                    </a>
+                  </div>
+                  <div class="col-md-4 col-6 mb-md-4 mb-3">
+                    <a
+                      href="/pao-de-queijo"
+                      title="Sazonal"
+                      class="category__box"
+                    >
+                      <figure>
+                        <img
+                          src="assets/img/icons/prodIcons/paoDeQueijo.png"
+                          class="img-fluid"
+                        />
+                      </figure>
+                      <p>Pão de Queijo</p>
+                    </a>
+                  </div>
+                  <div class="col-md-4 col-6 mb-md-4 mb-3">
+                    <a href="/recheios" title="Sazonal" class="category__box">
+                      <figure>
+                        <img
+                          src="assets/img/icons/prodIcons/recheio.png"
+                          class="img-fluid"
+                        />
+                      </figure>
+                      <p>Recheios</p>
+                    </a>
+                  </div>
+                  <div class="col-md-4 col-6 mb-md-4 mb-3">
+                    <a href="/salgados" title="Sazonal" class="category__box">
+                      <figure>
+                        <img
+                          src="assets/img/icons/prodIcons/salgado.png"
+                          class="img-fluid"
+                        />
+                      </figure>
+                      <p>Salgado</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="network order-md-1 order-0">
+            <a
+              href="https://www.facebook.com/marquespanoficial/"
+              title="facebook"
+              target="_blank"
+              ><i class="icon-facebook"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/c/MarquespanOficial"
+              title="Youtube"
+              target="_blank"
+              ><i class="icon-youtube"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/marquespan.oficial"
+              title="Instagram"
+              target="_blank"
+              ><i class="icon-instagram"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/marquespanoficial"
+              title="linkedin"
+              target="_blank"
+              ><i class="icon-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="root"></div>
+
+    <footer id="Footer">
+      <div class="container-fluid" id="atendimento">
+        <div class="general-section--py">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="address">
+                  <h4>São Paulo</h4>
+
+                  <p>
+                    <a
+                      href="https://goo.gl/maps/RDgF4zqtyXsshPoaA"
+                      target="_blank"
+                      ><i class="icon-location"></i> R. Anna Inghes Delegado
+                      Fiol, 571 <br />
+                      Vila São Cristóvão, Tatuí - SP, 18280-005</a
+                    >
+                  </p>
+
+                  <p>
+                    <a
+                      href="mailto:atendimentosp@marquespan.com"
+                      target="_blank"
+                      ><i class="ion-email"></i> atendimentosp@marquespan.com</a
+                    >
+                  </p>
+
+                  <p>
+                    <a href="tel:+551594511999" target="_blank">
+                      <i class="icon-phone"></i> (15) 3451-1999</a
+                    >
+                  </p>
+
+                  <h4>Rio Grande do Sul</h4>
+
+                  <p>
+                    <a
+                      href="https://goo.gl/maps/qbRpw8SLNQh4fY2N8"
+                      target="_blank"
+                      ><i class="icon-location"></i> Estr. Vânius Abílio dos
+                      Santos, 825 <br />
+                      Santa Cruz, Gravataí - RS, 94170-303</a
+                    >
+                  </p>
+
+                  <p>
+                    <a
+                      href="mailto:atendimentors@marquespan.com.br"
+                      target="_blank"
+                      ><i class="ion-email"></i>
+                      atendimentors@marquespan.com.br</a
+                    >
+                  </p>
+
+                  <p>
+                    <a href="tel:+555134849584" target="_blank">
+                      <i class="icon-phone"></i> (51) 3484-9584</a
+                    >
+                  </p>
+
+                  <h4>CD - Santa Catarina</h4>
+
+                  <p>
+                    <a
+                      href="https://goo.gl/maps/5KvNkfUVWEVW1oCr5"
+                      target="_blank"
+                      ><i class="icon-location"></i> Rodovia Governador Jorge
+                      Lacerda, 11135 <br />
+                      Verdinho, Criciúma - SC, 88805-350</a
+                    >
+                  </p>
+
+                  <p>
+                    <a
+                      href="mailto:atendimentosc@marquespan.com.br"
+                      target="_blank"
+                      ><i class="ion-email"></i>
+                      atendimentosc@marquespan.com.br</a
+                    >
+                  </p>
+
+                  <p>
+                    <a href="tel:+554834390220" target="_blank">
+                      <i class="icon-phone"></i> (48) 3439-0220</a
+                    >
+                  </p>
+
+                  <h4>CD - Minas Gerais</h4>
+
+                  <p>
+                    <a
+                      href="https://goo.gl/maps/HsQ2qnWtnaAv3RiJ9"
+                      target="_blank"
+                      ><i class="icon-location"></i> Rua Dois, 100 <br />
+                      Jd. Riacho das Pedras, Contagem - MG, 32250-010</a
+                    >
+                  </p>
+
+                  <p>
+                    <a
+                      href="mailto:atendimentomg@marquespan.com.br"
+                      target="_blank"
+                      ><i class="ion-email"></i>
+                      atendimentomg@marquespan.com.br</a
+                    >
+                  </p>
+
+                  <p>
+                    <a href="tel:+553123420733" target="_blank">
+                      <i class="icon-phone"></i> (31) 2342-0733</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-5 col-12">
+              <p
+                class="size--s60 font--bree-light font-weight-light text--gray-light mb-1"
+              >
+                deixe-nos as suas dúvidas, mensagens, sugestões…
+              </p>
+              <div class="relative">
+                <style>
+                  .form-control::placeholder {
+                    color: #979797;
+                  }
+
+                  .message {
+                    padding: 10px;
+                    margin-top: 20px;
+                    border-radius: 5px;
+                  }
+
+                  .error {
+                    background-color: #f8d7da;
+                    color: #721c24;
+                  }
+
+                  .success {
+                    background-color: #d4edda;
+                    color: #155724;
+                  }
+
+                  .hidden {
+                    display: none;
+                  }
+                </style>
+                <form
+                  id="form_contato"
+                  data-id-form="3"
+                  class="zForm"
+                  action="javascript:void(0);"
+                  enctype="multipart/form-data"
+                  method="post"
+                  data-plugin="captcha"
+                  data-action="form"
+                >
+                  <fieldset class="zGroup">
+                    <div class="zGroup-description"></div>
+                    <div class="row">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            name="nome"
+                            id="nome"
+                            placeholder="Nome"
+                            class="form-control"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="form-group">
+                          <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Email"
+                            class="form-control"
+                            required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="form-group">
+                          <input
+                            type="tel"
+                            name="telefone"
+                            id="telefone"
+                            placeholder="Telefone"
+                            class="form-control"
+                            required
+                            pattern="\(\d{2}\)\s\d{4,5}-\d{4}"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            name="cidade"
+                            id="cidade"
+                            class="form-control"
+                            required
+                            placeholder="Sua Cidade"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <select name="assunto" class="form-control" required>
+                            <option value="" disabled selected>
+                              Assunto da mensagem
+                            </option>
+                            <option value="1">Dúvidas</option>
+                            <option value="2">
+                              Elogio, sugestões, reclamações
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="form-group">
+                          <select name="destino" class="form-control" required>
+                            <option value="" disabled selected>
+                              Destino da mensagem
+                            </option>
+                            <option value="1">São Paulo</option>
+                            <option value="2">Rio Grande do Sul</option>
+                            <option value="3">CD Santa Catarina</option>
+                            <option value="4">CD Minas Gerais</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div
+                        class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"
+                      >
+                        <div class="form-group">
+                          <textarea
+                            name="mensagem"
+                            placeholder="Mensagem"
+                            rows="5"
+                            class="form-control"
+                            required
+                            style="color: #979797"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <div class="form-actions">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      title="Enviar"
+                    >
+                      Enviar
+                    </button>
+                  </div>
+                </form>
+
+                <div id="message-error" class="message error hidden"></div>
+                <div id="message-success" class="message success hidden"></div>
+              </div>
+            </div>
+            <div class="col-md-7 col-12 text-right">
+              <button type="button" class="js-push-to-top btn btn-link p-0">
+                <i class="icon-arrow-up-3 size--s44"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="general-section--pb">
+          <div class="row align-items-center">
+            <div
+              class="col-md-8 col-12 mb-md-0 mb-3 d-flex align-items-center flex-md-row flex-column justify-content-md-start justify-content-center"
+            >
+              <a
+                href="https://curriculo.marquespan.com.br"
+                target="_blank"
+                class="btn btn-outline-white ml-md-3 ml-0 mb-md-0 mb-3 d-inline-flex align-items-center"
+              >
+                Cadastre seu curriculo<i class="icon-arrow-right-2 ml-2"></i>
+              </a>
+              <a
+                href="tel:+55 15 3451 1999"
+                class="btn btn-white-30 ml-md-3 ml-0 mb-md-0 mb-1 font-weight-bold"
+              >
+                Apoio ao cliente (15) 3451-1999
+              </a>
+              <ul class="list-unstyled list-inline" role="listbox"></ul>
+            </div>
+            <div class="col-md-4 col-12">
+              <div class="network">
+                <ul
+                  class="d-flex align-items-center justify-content-md-end justify-content-center"
+                >
+                  <li>
+                    <a
+                      href="https://www.facebook.com/marquespanoficial/"
+                      title="facebook"
+                      target="_blank"
+                      ><i class="icon-facebook"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/marquespan.oficial"
+                      title="Instagram"
+                      target="_blank"
+                      ><i class="icon-instagram"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/marquespanoficial"
+                      title="linkedin"
+                      target="_blank"
+                      ><i class="icon-linkedin"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/c/MarquespanOficial"
+                      title="Youtube"
+                      target="_blank"
+                      ><i class="icon-youtube"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </footer>
+
+    <script src="assets/plugins/aos/aos.js"></script>
+    <script src="assets/plugins/swiper/swiper-bundle.js"></script>
+
+    <script src="assets/plugins/jquery/jquery-3.7.1.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+    <!-- <script
+      type="text/javascript"
+      src="assets/plugins/rev/js/rbtools.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="assets/plugins/rev/js/rs6.min.js"
+    ></script> -->
+    <script type="text/javascript">
+      if (typeof revslider_showDoubleJqueryError === "undefined") {
+        function revslider_showDoubleJqueryError(sliderID) {
+          console.log(
+            "You have some jquery.js library include that comes after the Slider Revolution files js inclusion."
+          );
+          console.log("To fix this, you can:");
+          console.log(
+            "1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on"
+          );
+          console.log("2. Find the double jQuery.js inclusion and remove it");
+          return "Double Included jQuery Library";
+        }
+      }
+    </script>
+    <!-- <script
+      type="text/javascript"
+      src="assets/scripts/pages/home.index.min.js"
+    ></script> -->
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+    <script defer>
+      var rotas = [
+        {
+          path: "",
+          component: "home.html",
+          dataPage: "home",
+          footer: true,
+          title: "Home",
+        },
+        {
+          path: "/",
+          component: "home.html",
+          dataPage: "home",
+          footer: true,
+          title: "Home",
+        },
+        {
+          path: "/logistica",
+          component: "logistica.html",
+          dataPage: "logistica",
+          footer: true,
+          title: "Logística",
+        },
+
+        {
+          path: "/empresa",
+          component: "empresa.html",
+          dataPage: "empresa",
+          footer: true,
+          title: "Empresa",
+        },
+      ];
+      function rotear(rotaUrl = window.location.pathname) {
+        const rotaEncontrada = rotas.find(
+          (rota) => rota.path.toLowerCase() === rotaUrl.toLowerCase()
+        );
+        return (
+          rotaEncontrada || { path: "/error", component: "/page/erro.html" }
+        );
+      }
+
+      async function loadPage() {
+        let rota = rotear();
+        $("#root").empty();
+        await $("#root").load(rota.component);
+        document.getElementById(
+          "pageTitle"
+        ).innerHTML = `${rota.title} | Marquespan`;
+        $(".li-pageRef").each(function () {
+          const dataPageValue = $(this).data("page");
+          if (dataPageValue === rota.dataPage) {
+            $(this).addClass("active");
+          }
+        });
+        if (!rota.footer) {
+          $("#Footer").css("display", "none");
+        }
+        window.scrollTo(0, 0);
+      }
+      $(".redirect-link").on("click", function (event) {
+        if ($(this).attr("href") == "#events") {
+          event.preventDefault();
+          window.location.hash = $(this).attr("href");
+          window.location.pathname = "/";
+        }
+        if ($(this).attr("href") == "#atendimento") {
+          event.preventDefault();
+          window.location.hash = $(this).attr("href");
+          window.location.pathname = "/";
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", async function () {
+        await $.get("assets/js/eventos.json", function (data) {
+          data.forEach((evento) => {
+            const rota = {
+              path: `/${evento.slug_ev}`,
+              component: "eventos.html",
+              dataPage: "eventos",
+              footer: false,
+              title: evento.nome_ev,
+            };
+
+            rotas.push(rota);
+          });
+        });
+        await $.get("assets/js/categorias.json", function (data) {
+          data.forEach((categoria) => {
+            const rota = {
+              path: `/${categoria.slugCat}`,
+              component: "produtos.html",
+              dataPage: "produtos",
+              footer: false,
+              title: categoria.nomeCat,
+            };
+
+            rotas.push(rota);
+          });
+        });
+
+        await $.get("assets/js/produtos.json", function (data) {
+          data.forEach((produto) => {
+            const rota = {
+              path: `/${produto.slug}`,
+              component: "produto.html",
+              dataPage: "produto",
+              footer: false,
+              title: produto.nomeProd,
+            };
+
+            rotas.push(rota);
+          });
+        });
+        loadPage();
+
+        setTimeout(function () {
+          AOS.init();
+        }, 500);
+      });
+
+      AOS.init();
+    </script>
+  </body>
+</html>

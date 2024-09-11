@@ -1,0 +1,454 @@
+<link href="assets/plugins/slick/slick.css" rel="stylesheet" type="text/css" />
+<link
+  href="assets/plugins/slick/slick-theme.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+
+<style>
+  #secondTitleProdCat {
+    color: white;
+  }
+  .ic-menu,
+  .ic-menu::before,
+  .ic-menu::after {
+    background-color: #026338 !important;
+  }
+  /*#ProductsIndex .list__products {*/
+  /*  background: url("assets/img/Banners/textura_background_4percent.jpeg.jpg");*/
+  /*  background-color: rgba(255, 255, 255, 0.096);*/
+  /*  background-position: center;*/
+  /*}*/
+  #ProductsIndex .list__products {
+    background: #fff;
+  }
+  .slick-slide {
+    scale: 1.25;
+  }
+  .slick-list {
+  }
+  .products {
+    height: 50%;
+  }
+  .general-section--py {
+    height: 100%;
+  }
+  @media (min-width: 992px) and (max-width: 1480px) {
+    #Header .logo {
+      max-width: 180px;
+    }
+  }
+  @media (max-width: 599px) {
+    #Header .btn-menu .ic-menu,
+    #Header .btn-menu .ic-menu::before,
+    #Header .btn-menu .ic-menu::after {
+      background-color: #026338 !important;
+    }
+    #secondTitleProdCat {
+      color: #026338;
+    }
+  }
+  @media (max-width: 479px) {
+    .slick-slide div {
+      width: 100%;
+    }
+  }
+</style>
+
+<main id="Content">
+  <section id="ProductsIndex">
+    <nav
+      class="nav__categories"
+      data-plugin="os-animation"
+      data-os-animation="fadeInLeft"
+      data-os-animation-offset="100%"
+      data-os-animation-delay="0.80s"
+      data-os-animation-duration="0.50s"
+      style="margin-bottom: 0; position: absolute; z-index: 1; left: 0; top: 0"
+    >
+      <ul>
+        <li>
+          <a
+            class="iconLink"
+            data-href-link="/linha-tradicional"
+            href="/linha-tradicional"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Tradicional"
+          >
+            <img
+              src="assets/img/icons/prodIcons/pao.png?mode=pad"
+              style="width: 40px; height: 30px"
+            />
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="iconLink"
+            data-href-link="/linha-extra"
+            href="/linha-extra"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Extra"
+          >
+            <img
+              src="assets/img/icons/prodIcons/paoDeMel.png?mode=pad"
+              style="width: 40px; height: 30px"
+            />
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="iconLink"
+            data-href-link="/linha-premium"
+            href="/linha-premium"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Premium"
+          >
+            <img
+              src="assets/img/icons/prodIcons/fatiaHungara.png?mode=pad"
+              style="width: 40px; height: 30px"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            class="iconLink"
+            data-href-link="/salgados"
+            href="/salgados"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Salgados"
+          >
+            <img
+              src="assets/img/icons/prodIcons/salgado.png?mode=pad"
+              style="width: 40px; height: 30px"
+            />
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="iconLink"
+            data-href-link="/bolos-e-tortas"
+            href="/bolos-e-tortas"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Bolos e Tortas"
+          >
+            <img
+              src="assets/img/icons/prodIcons/torta.png?mode=pad"
+              style="width: 40px; height: 30px"
+            />
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="iconLink"
+            data-href-link="/pao-de-queijo"
+            href="/pao-de-queijo"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Pão de Queijo"
+          >
+            <img
+              src="assets/img/icons/prodIcons/paoDeQueijo.png?mode=pad"
+              style="width: 40px; height: 30px"
+            />
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="iconLink"
+            data-href-link="/recheios"
+            href="/recheios"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Recheios"
+          >
+            <img
+              src="assets/img/icons/prodIcons/recheio.png?mode=pad"
+              style="width: 40px; height: 30px"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="row no-gutters align-items-stretch h-100">
+      <div
+        class="col-xl-8 col-lg-8 col-md-8 col-sm-7 col-12 list__products order-sm-first order-last"
+      >
+        <div class="general-section--py text-center row no-gutters">
+          <div
+            data-plugin="os-animation"
+            data-os-animation="fadeInUp"
+            data-os-animation-offset="100%"
+            data-os-animation-delay="0.00s"
+            data-os-animation-duration="0.80s"
+            class="regiaoSelect"
+          >
+            <label for="regiaoSelect">Região: </label>
+            <select name="regiaoSelect" id="regiaoSelect">
+              <option value="sudeste" style="color: #000">Sudeste</option>
+              <option value="sul" style="color: #000">Sul</option>
+            </select>
+          </div>
+
+          <div
+            data-plugin="os-animation"
+            data-os-animation="fadeInUp"
+            data-os-animation-offset="100%"
+            data-os-animation-delay="0.00s"
+            data-os-animation-duration="0.80s"
+            class="col-12"
+          >
+            <h2
+              class="text-secondary size--s60 font--bree-bold text-lowercase"
+              id="titleProdCat"
+            ></h2>
+          </div>
+          <div class="container-fluid col-12">
+            <section class="products">
+              <div class="spinner-grow text-secondary" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+
+              <div class="slider__products" id="slider__products"></div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-12 list__categories order-sm-last order-first"
+      >
+        <div
+          class="container-fluid"
+          style="margin: 100px 0 30px 0; padding: 0 25px !important"
+        >
+          <div
+            class="pl-3 subcategories__box"
+            data-plugin="os-animation"
+            data-os-animation="fadeInLeft"
+            data-os-animation-offset="100%"
+            data-os-animation-delay="0.00s"
+            data-os-animation-duration="0.50s"
+          >
+            <a
+              href="destaques/pc-10.html"
+              class="mb-5 size--s48 font--bree-bold text-lowercase"
+              id="secondTitleProdCat"
+            ></a>
+            <ul class="subcategories" id="product_list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.5.2/jquery-migrate.min.js"
+></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script> -->
+<script type="text/javascript" src="assets/js/script.js" defer></script>
+<!-- <script type="text/javascript" src="assets/js/products.index.js" defer></script> -->
+
+<script>
+  $(function () {
+    let allIconLinks = document.querySelectorAll(".iconLink");
+    $(".iconLink").on("click", function (e) {
+      e.preventDefault();
+      console.log(`${$(this).attr("href")}?regiao=${$("#regiaoSelect").val()}`);
+      const searchParams = new URLSearchParams(location.search);
+      searchParams.set("regiao", document.getElementById("regiaoSelect").value);
+      window.location.search = searchParams.toString();
+      window.location.pathname = $(this).attr("href");
+    });
+    for (var i = 0; i < allIconLinks.length; i++) {
+      let item = allIconLinks[i];
+      if (
+        item.href &&
+        window.location.pathname == item.getAttribute("data-href-link")
+      ) {
+        item.classList.add("active");
+        break;
+      }
+    }
+    async function loadProdutos() {
+      let prodList = "";
+      var catsList;
+      await $.get("assets/js/categorias.json", function (cats) {
+        catsList = cats;
+        var targetId = null;
+        for (var i = 0; i < cats.length; i++) {
+          var item = cats[i];
+          if (window.location.pathname == "/" + cats[i].slugCat) {
+            targetId = item.idCat;
+            break;
+          }
+        }
+        for (var i = 0; i < cats.length; i++) {
+          if (cats[i].idCat == targetId) {
+            $("#titleProdCat").empty();
+            $("#titleProdCat").append(cats[i].nomeCat);
+            $("#secondTitleProdCat").empty();
+            $("#secondTitleProdCat").append(cats[i].nomeCat);
+          }
+        }
+      });
+
+      await $.get("assets/js/produtos.json", async function (produtos) {
+        const prodCat = [
+          {
+            path: "/linha-tradicional",
+            id: 1,
+          },
+          {
+            path: "/linha-extra",
+            id: 2,
+          },
+          {
+            path: "/linha-premium",
+            id: 5,
+          },
+          {
+            path: "/linha-prime",
+            id: 8,
+          },
+          {
+            path: "/confeitaria",
+            id: 9,
+          },
+          {
+            path: "/tortas",
+            id: 4,
+          },
+          {
+            path: "/pao-de-queijo",
+            id: 3,
+          },
+          {
+            path: "/recheios",
+            id: 6,
+          },
+          {
+            path: "/salgados",
+            id: 7,
+          },
+        ];
+        var targetId = null;
+
+        for (var i = 0; i < catsList.length; i++) {
+          var item = catsList[i];
+          if (window.location.pathname === "/" + item.slugCat) {
+            targetId = item.idCat;
+            break;
+          }
+        }
+        $.each(produtos, function (i, prod) {
+          if (prod.catId == targetId) {
+            if (prod[document.getElementById("regiaoSelect").value] == 1) {
+              $("#slider__products").append(
+                `<div class="divProduct">
+              <article class="product " data-id="${prod.idProd}">
+                  <a href="${prod.slug}" title="${prod.nomeProd}" class="h-100">
+                      <div class="product__box__image">
+                          <img class="img-fluid mx-auto img_products" src="assets/img/produtos/${prod.img_p}?mode=pad" alt="${prod.nomeProd}" />
+                      </div>
+                      <div class="product__box mt-3">
+                          <p>${prod.nomeProd}</p>
+                          <span style="
+    opacity: 0;
+    
+">a</span>
+                      </div>
+                  </a>
+              </article>
+          </div>
+          `
+              );
+              let slug = "/" + prod.slug;
+
+              prodList += `<li>
+                              <a class="size--s36" href="${slug}">${prod.nomeProd}</a>
+                          </li>`;
+              $("#product_list").empty();
+              $("#product_list").append(prodList);
+            }
+          }
+        });
+      });
+      $(function () {
+        setTimeout(function () {
+          $("#ProductsIndex .products .spinner-grow").css({
+            opacity: 0,
+            visibility: "hidden",
+            "z-index": -1,
+          });
+          $("#ProductsIndex .slider__products").slick({
+            centerMode: true,
+            centerPadding: "0px",
+            slidesToShow: $("#slider__products").children().length > 3 ? 3 : 1,
+            infinite: true,
+            speed: 900,
+            focusOnSelect: true,
+            responsive: [
+              {
+                breakpoint: 768,
+                settings: {
+                  arrows: true,
+                  centerMode: true,
+                  slidesToShow:
+                    $("#slider__products").children().length > 3 ? 3 : 1,
+                },
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  arrows: true,
+                  centerMode: true,
+                  infinite: true,
+                  speed: 900,
+                  focusOnSelect: true,
+                  centerPadding: "0px",
+                  slidesToShow: 2,
+                },
+              },
+            ],
+          });
+
+          $("#ProductsIndex .slider__products").on("wheel", function (e) {
+            e.preventDefault();
+            if (e.originalEvent.deltaY < 0) {
+              $(this).slick("slickNext");
+            } else {
+              $(this).slick("slickPrev");
+            }
+          });
+          $("#ProductsIndex .slider__products").css({
+            opacity: 1,
+            visibility: "visible",
+          });
+          $("#ProductsIndex .products .spinner-grow").hide();
+        }, 1000);
+      });
+    }
+    loadProdutos();
+    const urlParams = new URLSearchParams(location.search);
+    document.getElementById("regiaoSelect").value =
+      urlParams.get("regiao") || "sudeste";
+    $("#regiaoSelect").change(() => {
+      urlParams.set("regiao", document.getElementById("regiaoSelect").value);
+      window.location.search = urlParams.toString();
+    });
+  });
+</script>
+<script defer>
+  document.getElementById("preload").style.display = "none";
+</script>

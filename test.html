@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slick Slider with Video Syncing</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <style>
+      .js .slider-single > div:nth-child(1n + 2) {
+        display: none;
+      }
+
+      .js .slider-single.slick-initialized > div:nth-child(1n + 2) {
+        display: block;
+      }
+
+      h3 {
+        background: #f0f0f0;
+        color: #3498db;
+        font-size: 2.25rem;
+        margin: 0.5rem;
+        padding: 2%;
+        position: relative;
+        text-align: center;
+      }
+      .slider-single div {
+        width: 100%; /* Define a largura da div */
+        height: 400px; /* Define a altura da div */
+        overflow: hidden; /* Esconde o conteúdo que ultrapassa as bordas da div */
+        position: relative;
+        background: #fff;
+      }
+      .slider-nav div {
+        width: 100%; /* Define a largura da div */
+        height: 200px; /* Define a altura da div */
+        overflow: hidden; /* Esconde o conteúdo que ultrapassa as bordas da div */
+        position: relative;
+        margin-right: 10px;
+      }
+      .slider-single div video {
+        position: absolute; /* Posiciona o vídeo de forma absoluta dentro da div */
+        top: 50%; /* Centraliza verticalmente */
+        left: 50%; /* Centraliza horizontalmente */
+        height: 100%; /* Faz com que a altura do vídeo se ajuste à altura da div */
+        width: auto; /* Mantém a proporção do vídeo */
+        transform: translate(-50%, -50%);
+      }
+      .slider-nav div video {
+        max-width: 100%;
+        height: 100px;
+        max-height: 100px;
+      }
+      .slider-nav .slick-slide {
+        cursor: pointer;
+      }
+      .slick-slide.is-active h3 {
+        color: #c00;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body style="display: flex; justify-content: center; align-items: center">
+    <div id="page" style="width: 50%">
+      <div class="row">
+        <div class="column small-11 small-centered">
+          <div class="slider slider-single" style="margin-bottom: 20px">
+            <div style="width: 100%">
+              <video
+                src="./videos/inst15s..mp4"
+                autoplay
+                muted
+                controls
+                class="video-slider"
+                style="height: 100%; overflow: hidden"
+              ></video>
+            </div>
+            <div style="width: 100%">
+              <video
+                src="./videos/feira.mp4"
+                class="video-slider"
+                style="height: 100%; overflow: hidden"
+                controls
+                muted
+              ></video>
+            </div>
+            <div style="width: 100%">
+              <video
+                src="./videos/video3.mp4"
+                class="video-slider"
+                style="height: 100%; overflow: hidden"
+                controls
+                muted
+              ></video>
+            </div>
+          </div>
+          <div class="slider slider-nav">
+            <div
+              style="
+                margin-right: 20px;
+                background: url('assets/img/imgVideos/2.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-postion: center;
+              "
+            ></div>
+            <div
+              style="
+                margin-right: 20px;
+                background: url('assets/img/imgVideos/1.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-postion: center;
+              "
+            ></div>
+            <div
+              style="
+                margin-right: 20px;
+                background: url('assets/img/imgVideos/3.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-postion: center;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+      $(".slider-single").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: false,
+        adaptiveHeight: false,
+        infinite: true,
+        useTransform: true,
+        autoplay: true,
+        autoplaySpeed: 15000,
+      });
+
+      $(".slider-nav")
+        .on("init", function (event, slick) {
+          $(".slider-nav .slick-slide.slick-current").addClass("is-active");
+        })
+        .slick({
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false,
+          speed: 400,
+          autoplay: true,
+          focusOnSelect: false,
+          infinite: true,
+          autoplaySpeed: 15000,
+        });
+
+      $(".slider-nav").on("afterChange", function (event, slick, currentSlide) {
+        $(".slider-single").slick("slickGoTo", currentSlide);
+        document.querySelectorAll(".video-slider")[currentSlide + 1].play();
+        document.querySelectorAll(".video-slider")[
+          currentSlide
+        ].currentTime = 0;
+        document.querySelectorAll(".video-slider")[currentSlide].pause();
+      });
+      $(".slider-nav").on("click", ".slick-slide", function (e) {
+        console.log("asd");
+        var index = $(this).data("slick-index"); // Obtém o índice do slide clicado
+        $(".slider-nav").slick("slickGoTo", index); // Vai para o slide clicado e o centraliza
+      });
+    </script>
+  </body>
+</html>

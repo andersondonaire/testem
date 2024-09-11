@@ -1,0 +1,34 @@
+[
+  {
+    "id_ev": "1",
+    "nome_ev": "34ª SRE Trade Show 2024 (Rio de Janeiro) ",
+    "data_ev": "2024-03-19",
+    "tipo_ev": null,
+    "slug_ev": "sre-trade-show-2024",
+    "descricao_ev": "A 34ª SRE Trade Show marcou sua estreia como parte do calendário oficial de eventos da cidade, consolidando-se como o melhor e mais inovador evento de negócios das Américas. O evento foi também palco da Convenção das Américas de Supermercados pela segunda vez. Um dos grandes destaques desta edição foi a presença da Marquespan, que encantou os visitantes com um stand sensacional, demonstrando suas inovações e produtos de alta qualidade. A participação da empresa teve um brilho especial, pois coincidiu com a celebração dos seus 25 anos de sucesso no mercado, tornando o evento ainda mais memorável."
+  },
+  {
+    "id_ev": "2",
+    "nome_ev": "APAS SHOW 2024 (São Paulo)",
+    "data_ev": "2024-05-13",
+    "tipo_ev": null,
+    "slug_ev": "apas-show-2024",
+    "descricao_ev": "A Marquespan é uma renomada empresa com 25 anos de experiência no mercado de alimentos, conhecida por sua excelência em produtos e inovações. Com uma trajetória marcada por qualidade e inovação, a Marquespan se destaca pela capacidade de oferecer soluções que atendem às necessidades do setor alimentício. Durante a APAS SHOW 2024, a empresa não apenas comemorou seu 25º aniversário, mas também apresentou um stand impressionante que demonstrou suas mais recentes inovações e tendências do mercado. A participação da Marquespan reforçou seu compromisso com a excelência e sua liderança no setor, proporcionando uma experiência única para os visitantes e estabelecendo conexões valiosas com outros líderes da indústria."
+  },
+  {
+    "id_ev": "3",
+    "nome_ev": "ExpoSuper 2024 (Balneário Comboriú)",
+    "data_ev": "2024-06-18",
+    "tipo_ev": null,
+    "slug_ev": "e3-exposuper_2024_(balneario_comboriu)",
+    "descricao_ev": "A ExpoSuper 2024, a maior e mais completa feira de negócios e convenção do varejo de Santa Catarina, ocorreu de 18 a 20 de junho no Expocentro Balneário Camboriú, oferecendo uma edição imperdível. O evento foi uma excelente oportunidade para explorar um universo de inovações e conexões que impulsionaram negócios para o próximo nível. A Marquespan, com 25 anos de trajetória no mercado de alimentos, marcou presença com um stand notável, celebrando sua história e apresentando suas mais recentes inovações. A participação da Marquespan foi um dos destaques da feira, proporcionando aos visitantes uma visão privilegiada das tendências e soluções mais avançadas do setor."
+  },
+  {
+    "id_ev": "4",
+    "nome_ev": "ExpoApras 2024 (Curitiba)",
+    "data_ev": "2024-04-22",
+    "tipo_ev": null,
+    "slug_ev": "e4-expoapras_2024_(curitiba)",
+    "descricao_ev": "A Marquespan, líder nacional em panificação congelada, teve uma presença marcante na ExpoApras 2024. Com uma trajetória de sucesso iniciada em 1999, a empresa é amplamente reconhecida por seus valores de qualidade, honestidade e inovação. No evento, a Marquespan reforçou sua posição de destaque no setor, consolidando ainda mais sua reputação como a maior fabricante de panificação congelada do Brasil. O compromisso contínuo da empresa com a excelência e a inovação foi evidente em sua participação, solidificando seu papel como referência no mercado."
+  }
+]

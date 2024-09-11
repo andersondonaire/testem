@@ -1,0 +1,187 @@
+<base href="../" />
+<link rel="stylesheet" href="./assets/plugins/venobox/venobox.css" />
+<style>
+  #gallery-container::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  body {
+    background: #eee;
+  }
+  #gallery-container::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+  #gallery-container::-webkit-scrollbar {
+    width: 10px;
+    background-color: #e4e4e4;
+    border-radius: 5px;
+  }
+
+  #gallery-container::-webkit-scrollbar-thumb {
+    background-color: #9c9c9c;
+    border-radius: 5px;
+  }
+  .description h1 {
+    font-size: 2.5rem !important;
+    text-align: center;
+  }
+  .description h2 {
+    font-size: 1.5rem !important;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .description h2::before {
+    content: "";
+    width: 250px;
+    height: 2.5px;
+    position: absolute;
+    top: 2.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #026338;
+    border: #026338 solid 1px;
+    border-radius: 5px;
+  }
+  .description p {
+    color: #111;
+    font-size: 1rem !important;
+    text-align: justify;
+  }
+  .gallery-item {
+    padding: 5px;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+  .vbox-container {
+    overflow: visible;
+  }
+  .vbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    height: auto;
+    width: auto;
+  }
+</style>
+<div id="gallery-event" style="margin-top: 100px">
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <div
+      class="description"
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h1
+        id="title-gallery-event"
+        style="text-transform: uppercase"
+        data-aos="fade-down"
+        date-aos-duration="500"
+        data-aos-delay="0"
+        data-aos-once="true"
+      ></h1>
+      <p
+        id="description-gallery-event"
+        style="width: 80%"
+        data-aos="fade-up"
+        date-aos-duration="500"
+        data-aos-delay="200"
+        data-aos-once="true"
+      ></p>
+      <h2 style="margin-top: 20px; margin-bottom: 20px">
+        Galeria de fotos do evento
+      </h2>
+    </div>
+    <div
+      class="row justify-content-center align-items-center"
+      id="gallery-container"
+      data-aos="zoom-in"
+      date-aos-duration="300"
+      data-aos-delay="100"
+      data-aos-once="true"
+      style="
+        width: 100%;
+        background: linear-gradient(
+          360deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 0.76234243697479) 90%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        padding: 50px 20px;
+      "
+    ></div>
+  </div>
+</div>
+
+<script src="./assets/plugins/venobox/venobox.js"></script>
+<script>
+  $(".redirect-link").on("click", function (event) {
+    event.preventDefault();
+    window.location.hash = $(this).attr("href");
+  });
+  if (window.location.hash) {
+    const targetId = window.location.hash.substring(1);
+    window.location.hash = 0;
+    window.location.hash = targetId;
+  }
+  async function loadEventPage() {
+    await $.get("assets/js/eventos.json", function (data) {
+      var event;
+      data.forEach((evento) => {
+        if (window.location.pathname === "/" + evento.slug_ev) {
+          event = evento;
+        }
+      });
+      var imagesEvent = [];
+      $.get("assets/js/imagens_ev.json", function (imgsEv) {
+        imgsEv.forEach((imgEv) => {
+          if (imgEv.fk == event.id_ev) {
+            imagesEvent.push({
+              img_p: imgEv.img_p,
+              img_g: imgEv.img_g,
+            });
+          }
+        });
+        for (let i = 0; i < imagesEvent.length; i++) {
+          const element = `
+              <div class="col-md-4 gallery-item p-3">
+                <a
+                  class="venobox"
+                  data-gall="gallery"
+                  href="assets/img/eventos/${imagesEvent[i].img_g}.jpg"
+                >
+                  <img src="assets/img/eventos/${imagesEvent[i].img_p}.jpg"/>
+                </a>
+              </div>`;
+          $("#gallery-container").append(element);
+        }
+        $("#title-gallery-event").empty();
+        $("#title-gallery-event").append(`${event.nome_ev}`);
+        $("#description-gallery-event").empty();
+        $("#description-gallery-event").append(`${event.descricao_ev}`);
+        $(".venobox").venobox({
+          titleattr: "data-title",
+          numeratio: true,
+          infinigall: true,
+          spinner: "rotating-plane",
+        });
+      });
+    });
+  }
+  $(document).ready(() => {
+    loadEventPage();
+  });
+</script>
+<script defer>
+  document.getElementById("preload").style.display = "none";
+</script>

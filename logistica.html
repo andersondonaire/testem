@@ -1,0 +1,400 @@
+<style>
+  .title-logistica {
+    font-size: 3.5rem !important;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .text-map {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 599px) {
+    .image-container {
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      height: auto;
+    }
+
+    .img-num {
+      padding: 0;
+    }
+  }
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-container .overlay-text {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 5px 10px;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    border-radius: 3px;
+  }
+
+  .frotas {
+    width: 100%;
+    margin-top: 40px;
+    max-height: 25%;
+    background: linear-gradient(
+      360deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.507) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .frotas div {
+    position: relative;
+  }
+
+  .frotas div p {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  .overlay-content {
+    margin-top: 100px;
+    height: 100%;
+  }
+
+  .overlay-content h1 {
+    font-size: 3rem !important;
+    margin-bottom: 10px;
+    color: #026338;
+  }
+
+  .overlay-content p {
+    font-size: 1rem;
+    text-align: justify;
+    width: 400px;
+  }
+
+  .arrow {
+    background: #026338;
+    border-radius: 50%;
+    padding: 12px;
+  }
+
+  .arrow-container {
+    animation: arrow-up-down 0.875s infinite ease-in-out;
+    position: relative;
+    margin-top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @keyframes arrow-up-down {
+    0% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .overlay {
+      background: #00000067;
+      text-align: center;
+      padding-left: 0;
+    }
+
+    .video-bg video {
+      left: 0;
+    }
+
+    .overlay-content h1,
+    .overlay-content p {
+      text-shadow: 1px 1px 2px #000000;
+    }
+
+    .overlay-content p {
+      position: relative;
+      width: 100%;
+      padding: 0 20px;
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    .overlay-content p {
+      font-size: 0.9rem !important;
+    }
+    .overlay-content h1 {
+      font-size: 2rem !important;
+    }
+  }
+
+  .ic-menu,
+  .ic-menu::before,
+  .ic-menu::after {
+    background-color: #026338 !important;
+  }
+  .title-logistica {
+    position: relative;
+  }
+
+  @media screen and (min-width: 865px) {
+    .title-logistica::before {
+      content: "";
+      width: 250px;
+      height: 2.5px;
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #026338;
+      border: #026338 solid 1px;
+      border-radius: 5px;
+    }
+  }
+
+  .frota-text-container {
+    padding: 100px 75px 0px;
+    gap: 40px;
+    color: #fff;
+    text-shadow: 0.5px 0.5px 1px #000000;
+  }
+  .map-text-container {
+    padding: 30px 75px 0px;
+    gap: 40px;
+  }
+
+  @media (max-width: 700px) {
+    .text-map {
+      font-size: 1.1rem;
+    }
+    .title-logistica {
+      font-size: 2.5rem !important;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+    .frota-text-container {
+      padding: 100px 25px 0px;
+      gap: 10px;
+    }
+    .texture-background {
+      background: url("assets/img/Banners/textura_background_4percent.jpeg.jpg");
+      background-color: rgba(255, 255, 255, 0.096);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .map-text-container {
+      padding: 30px 25px 0px;
+      background-image: url("assets/img/Banners/textura_background_4percent.jpeg.jpg");
+      gap: 40px;
+    }
+  }
+  .top-background {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(255, 255, 255, 0.41220238095238093) 41%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+</style>
+<div class="top-background">
+  <div
+    style="
+      background-image: url('assets/img/homeIndex/base\ pao\ de\ queijo.jpg');
+    "
+  >
+    <div
+      class="d-flex flex-column frota-text-container"
+      style="background: #111111e7; padding-bottom: 40px"
+    >
+      <h1
+        data-aos="fade-down"
+        data-aos-delay="100"
+        data-aos-duration="500"
+        data-aos-once="true"
+        class="text-center title-logistica"
+      >
+        Frota moderna e Própria
+      </h1>
+      <p
+        data-aos="fade-up"
+        data-aos-delay="300"
+        data-aos-duration="800"
+        data-aos-once="true"
+        class="text-justify"
+        style="font-size: 1.2rem !important"
+      >
+        Nossa frota robusta nos permite oferecer um serviço de logística
+        cuidadosamente planejado para atender às demandas específicas de cada
+        cliente. Todas as decisões estratégicas do setor são integradas ao nosso
+        planejamento e objetivos, garantindo operações ágeis, com menor risco e
+        totalmente alinhadas à nossa política de excelência no atendimento.
+      </p>
+    </div>
+  </div>
+  <div
+    class="row justify-content-center align-items-center"
+    style="
+      background: linear-gradient(
+        180deg,
+        #111111e7 0%,
+        #111111e7 20%,
+        #22222200 100%
+      );
+    "
+  >
+    <div class="col-sm-4 col-6 img-num">
+      <div class="image-container">
+        <img src="assets/img/logistica/automoveis.png" alt="Image 1" />
+        <div class="overlay-text"></div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-6 img-num">
+      <div class="image-container">
+        <img src="assets/img/logistica/caminhoes.png" alt="Image 2" />
+        <div class="overlay-text"></div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-12 img-num">
+      <div class="image-container">
+        <img src="assets/img/logistica/rotas.png" alt="Image 3" />
+        <div class="overlay-text"></div>
+      </div>
+    </div>
+  </div>
+  <div class="arrow-container" style="z-index: 2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      fill="currentColor"
+      class="bi bi-arrow-down arrow"
+      viewBox="0 0 16 16"
+      style="color: #fff"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"
+      />
+    </svg>
+  </div>
+  <div
+    class="map-text-container texture-background"
+    style="
+      background-image: url(assets/img/Banners/textura_background_4percent.jpeg.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    "
+  >
+    <div
+      style="
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: linear-gradient(
+          180deg,
+          rgb(255, 255, 255) 0%,
+          rgba(255, 255, 255, 0.412) 41%,
+          rgba(255, 255, 255, 0) 80%,
+          rgb(255, 255, 255) 100%
+        );
+        width: 100%;
+        height: 100%;
+      "
+    ></div>
+    <h1
+      data-aos="fade-down"
+      data-aos-delay="100"
+      data-aos-duration="500"
+      data-aos-once="true"
+      class="text-center title-logistica"
+    >
+      Área de Atendimento
+    </h1>
+    <div class="row mb-5">
+      <div class="col-sm-6 col-12">
+        <img
+          src="assets/img/logistica/map.png"
+          alt="Mapa da Área de Atendimento."
+          class="img-fluid"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+          data-aos-duration="800"
+          data-aos-once="true"
+        />
+      </div>
+      <div
+        class="col-sm-6 col-12 order-sm-last order-first mb-5 d-flex justify-content-center align-items-center"
+      >
+        <p
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-duration="800"
+          data-aos-once="true"
+          class="text-justify text-map"
+          style=""
+        >
+          Nosso compromisso com investimentos constantes e o crescimento
+          contínuo nos permite expandir nossa cobertura pelo Brasil. O mapa ao
+          lado ilustra as regiões atendidas atualmente (2024), destacando nossa
+          presença estratégica e capacidade de alcançar cada vez mais estados em
+          todo o país.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="assets/js/script.js" defer></script>
+<script>
+  // Animação dos números na seção Números
+
+  document.getElementById("preload").style.display = "none";
+  function animarNumeros() {
+    const numeros = document.querySelectorAll(".numero");
+    numeros.forEach((numero) => {
+      const valorFinal = parseInt(numero.getAttribute("data-numero"));
+      const duracao = 1000; // 2 segundos
+      const passo = (valorFinal / duracao) * 50; // Incremento a cada 50ms
+
+      let contador = 0;
+
+      const temporizador = setInterval(() => {
+        contador += passo;
+        numero.textContent = Math.floor(contador);
+
+        if (contador >= valorFinal) {
+          numero.textContent = valorFinal;
+          clearInterval(temporizador);
+        }
+      }, 50);
+    });
+  }
+
+  // Verificar quando a seção Números entra na área visível
+  function verificarScroll() {
+    animarNumeros();
+  }
+
+  document.addEventListener("DOMContentLoaded", verificarScroll);
+</script>
+<script defer>
+  document.getElementById("preload").style.display = "none";
+</script>

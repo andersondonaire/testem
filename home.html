@@ -1,0 +1,1486 @@
+<link rel="stylesheet" href="assets/css/custom.css" />
+<style>
+  .texture-background {
+    background: url("assets/img/Banners/textura_background_4percent.jpeg.jpg");
+    background-color: rgba(255, 255, 255, 0.096);
+    background-position: center;
+    background-size: cover;
+  }
+  #gallery-event {
+    position: fixed;
+
+    background: rgba(78, 78, 78, 0.699);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: none;
+  }
+
+  #gallery-event > div {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #gallery-noContainer {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: #00000000;
+  }
+  #gallery-container {
+    max-width: 80%;
+    max-height: 90%;
+    background: #00000099;
+    border-radius: 5px;
+    border: 3px solid #00000099;
+    z-index: 11;
+    position: relative;
+  }
+  #gallery-container::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  #gallery-container::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+  #gallery-container::-webkit-scrollbar {
+    width: 10px;
+    background-color: #e4e4e4;
+    border-radius: 5px;
+  }
+
+  #gallery-container::-webkit-scrollbar-thumb {
+    background-color: #9c9c9c;
+    border-radius: 5px;
+  }
+  #gallery-container h1 {
+    color: #fff;
+    font-size: 2.5rem !important;
+    text-align: center;
+  }
+  #gallery-container h2 {
+    color: #fff;
+    font-size: 1.5rem !important;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+  }
+  #gallery-container h2::before {
+    content: "";
+    width: 250px;
+    height: 2.5px;
+    position: absolute;
+    top: 2.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border: #fff solid 1px;
+    border-radius: 5px;
+  }
+  #gallery-container p {
+    color: #eee;
+    font-size: 1rem !important;
+    text-align: justify;
+  }
+  .gallery-item {
+    padding: 5px;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+  .vbox-content img {
+    max-width: 100%;
+    max-height: 100vh;
+    height: auto;
+    width: auto;
+  }
+</style>
+<style>
+  .ativo {
+    display: none;
+    transition: all ease-in-out 1000ms;
+  }
+  .section-mosaico {
+    display: none;
+    transition: all ease-in-out 500ms;
+  }
+  #sectionPhotos {
+    background-color: #fff;
+  }
+  .section-mosaico .photo {
+    overflow: hidden;
+    transition: all ease-in-out 500ms;
+  }
+  .section-mosaico .photo:hover {
+    transform: scale(1.025);
+  }
+  .mosaico-event {
+    background-color: #fff;
+  }
+  .mosaico-event div div {
+    border: 1px solid #fff;
+  }
+  .box {
+    height: 100%;
+    scale: 0.95;
+    transition: all ease-in-out 400ms;
+    cursor: pointer;
+  }
+  .box:hover {
+    scale: 1;
+  }
+  .large {
+    /*background-image: url("/assets/img/Fotos/image00015.jpeg");*/
+    background: #bbb;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .medium {
+    /*background-image: url("/assets/img/Fotos/image00005.jpeg");*/
+    background: #bbb;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .small {
+    /*background-image: url("/assets/img/Fotos/image00010.jpeg");*/
+    background: #bbb;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .tall {
+    /*background-image: url("/assets/img/Fotos/image00001.jpeg");*/
+    background: #bbb;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .mosaico-description {
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    bottom: 0;
+    max-width: 65%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.932) 0%,
+      rgba(0, 0, 0, 0.719) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    color: white;
+    padding: 10px;
+  }
+  .mosaico-description h1 {
+    font-size: 3rem !important;
+  }
+  .btn-verMais {
+    border: none;
+    background: #026338;
+    width: 80px;
+    height: 45px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    transition: all ease-in-out 200ms;
+  }
+  .btn-verMais:hover {
+    width: 100px;
+  }
+  .retangulo-verde {
+    width: 30px;
+    border-radius: 8px;
+    height: 70px;
+    background-color: #026338;
+    position: absolute;
+    z-index: 9;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+    border: none;
+  }
+
+  .retangulo-verde:focus + .mosaico-description {
+    visibility: visible;
+  }
+  .container-fullscreen {
+    display: flex;
+    flex-direction: column;
+  }
+  .row-fullscreen {
+    flex: 1;
+    display: flex;
+  }
+</style>
+<style>
+  #videoModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .modal-content {
+    margin: 50px auto;
+    width: 80%;
+    max-width: 800px;
+    transform: translateY(-200%);
+    transition: transform 0.75s ease;
+    background: #026338;
+    box-shadow: 0.5px 0.5px 1px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  .modal-content.active {
+    transform: translateY(0);
+  }
+</style>
+
+<div id="videoModal">
+  <div class="modal-content" style="padding: 0">
+    <div class="modal-body" style="padding: 4px">
+      <button
+        type="button"
+        class="btn btn-link btn-close"
+        id="closeBtn"
+        style="position: absolute; right: -20px; top: 5px; z-index: 2"
+      >
+        <i
+          class="icon-close"
+          style="font-size: 1.5rem; color: #fff; font-weight: 700"
+          id="fechaPopup"
+        ></i>
+      </button>
+      <video
+        id="popupVideo"
+        width="100%"
+        autoplay
+        controls
+        muted
+        loading="lazy"
+        src="videos/institucional_2024.mp4"
+      >
+        Seu navegador não suporta a tag de vídeo.
+      </video>
+    </div>
+  </div>
+</div>
+<main id="Content">
+  <link
+    rel="stylesheet"
+    href="assets/plugins/rev/css/rs6.css"
+    type="text/css"
+    media="all"
+  />
+  <section id="HomeIndex">
+    <p class="rs-p-wp-fix"></p>
+    <link rel="stylesheet" href="assets/plugins/swiper/swiper-bundle.min.css" />
+    <style>
+      .swiper-container {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+      }
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      .swiper-slide::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+      .swiper-pagination {
+        bottom: 100px;
+        margin-bottom: 60px;
+        text-align: center;
+      }
+      .swiper-pagination-bullet {
+        width: 50px;
+        height: 1.75px;
+        background: white;
+        opacity: 0.7;
+        margin: 3px;
+        border-radius: 2px;
+      }
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+      .title-swiper {
+        font-family: Bree-Regular;
+        font-size: 4.5rem !important;
+        line-height: 4.5rem !important;
+        color: rgb(255, 255, 255);
+        text-align: left;
+        font-weight: 700;
+        text-shadow: 1px 1px 2px #000000;
+        transform: translateY(-80px);
+        opacity: 0;
+        margin-top: 70px;
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      }
+      .title-swiper-active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .p-swiper {
+        text-shadow: 1px 1px 2px #000000;
+        font-family: Bree-LightOblique;
+        height: auto;
+        color: rgb(255, 255, 255);
+        font-style: italic;
+        width: 100%;
+        text-align: left;
+        font-weight: 700;
+        font-size: 33.5px !important;
+        line-height: 35px !important;
+        margin-bottom: 40px;
+        transform: translateY(80px);
+        opacity: 0;
+        transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+      }
+      .p-swiper-active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .swiper-description {
+        position: absolute;
+        top: 400px;
+        left: 100px;
+        z-index: 2;
+        max-width: calc(70% - 100px);
+      }
+      @media (max-height: 599px) {
+        .swiper-description {
+          top: unset;
+          bottom: 50px;
+        }
+      }
+      @media (max-width: 980px) {
+        .title-swiper {
+          font-size: 50px !important;
+          line-height: 50px !important;
+        }
+        .swiper-description {
+          top: unset;
+          bottom: 80px;
+          left: 20px;
+        }
+        .swiper-pagination {
+          bottom: 50px;
+        }
+      }
+      @media screen and (min-width: 600px) and (max-width: 1480px) {
+        .swiper-description .title-swiper,
+        .swiper-container .p-swiper {
+          line-height: auto !important;
+        }
+      }
+      @media (max-width: 699px) {
+        .title-swiper {
+          font-size: 30px !important;
+          line-height: 30px !important;
+        }
+        .p-swiper {
+          font-size: 25px !important;
+          line-height: 25px !important;
+        }
+        .swiper-description {
+          top: unset;
+          bottom: 50px;
+          left: 20px;
+        }
+      }
+      @media (max-width: 599px) {
+        .swiper-description {
+          max-width: 100%;
+        }
+        .swiper-pagination {
+          display: none;
+        }
+      }
+    </style>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide"
+          style="
+            background-image: url('assets/img/Banners/montagem2.jpg');
+            position: relative;
+          "
+        >
+          <div class="swiper-description">
+            <p class="p-swiper">25 Anos de Tradição</p>
+            <h1 class="title-swiper">"Para nós o pão é SAGRADO."</h1>
+          </div>
+        </div>
+        <div
+          class="swiper-slide"
+          style="background-image: url('assets/img/Banners/montagem1.jpg')"
+        >
+          <div class="swiper-description">
+            <p class="p-swiper">Um portfólio adaptado às suas necessidades</p>
+            <h1 class="title-swiper">Mais de 90 produtos</h1>
+          </div>
+        </div>
+        <div
+          class="swiper-slide"
+          style="background-image: url('assets/img/Banners/feira1.jpg')"
+        >
+          <div class="swiper-description">
+            <p class="p-swiper">15 milhões de pães produzidos por dia</p>
+            <h1 class="title-swiper">A maior fábrica de pães do Mundo</h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paginação (Barrinhas) -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div data-zcms-ref="details" class="" id="events">
+      <div class="is-wrapper clearfix z__content">
+        <div
+          class="is-section is-box is-section-auto is-light-text section__homeNews"
+          style="background-color: rgb(29, 29, 29)"
+        >
+          <div class="is-boxes">
+            <div class="is-box-centered">
+              <div class="container-fluid no-margins is-container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h2
+                      data-aos="fade-down"
+                      data-aos-delay="200"
+                      data-aos-duration="800"
+                    >
+                      <span style="font-weight: normal" class="font--bree-thin"
+                        ><i
+                          ><span style="color: rgba(255, 255, 255, 0.5)"
+                            >eventos</span
+                          ></i
+                        ></span
+                      >
+                    </h2>
+                    <h4
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      data-aos-duration="800"
+                    >
+                      <span style="font-weight: normal" class="font--bree-light"
+                        >Temos sempre novidades!</span
+                      >
+                    </h4>
+                  </div>
+                  <div class="col-md-6">
+                    <section data-component="true">
+                      <div class="section__network" data-component="_zSocial">
+                        <ul
+                          class="d-flex align-items-center justify-content-end"
+                        >
+                          <li>
+                            <a
+                              href="https://facebook.com/marquespanoficial/"
+                              title="facebook"
+                              target="_blank"
+                              ><i class="icon-facebook"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="https://www.instagram.com/marquespan.oficial/"
+                              title="Instagram"
+                              target="_blank"
+                              ><i class="icon-instagram"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="https://www.linkedin.com/company/marquespanoficial"
+                              title="linkedin"
+                              target="_blank"
+                              ><i class="icon-linkedin"></i
+                            ></a>
+                          </li>
+                          <li>
+                            <a
+                              href="https://www.youtube.com/c/MarquespanOficial"
+                              title="Youtube"
+                              target="_blank"
+                              ><i class="icon-youtube"></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="is-section is-box is-light-text is-content-top is-section-auto section__lastnews"
+          style="background-color: rgb(29, 29, 29)"
+        >
+          <div class="is-boxes">
+            <div class="is-box-centered is-content-top">
+              <div class="container-full no-gutters is-container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <section data-component="true">
+                      <section
+                        class="section__news"
+                        data-component="_zFeaturedNews"
+                      >
+                        <div class="container-fluid-left">
+                          <div class="text-center">
+                            <div
+                              class="spinner-grow text-secondary"
+                              role="status"
+                            >
+                              <span class="sr-only">Loading...</span>
+                            </div>
+                          </div>
+                          <div class="slider__news" id="zSlider__news">
+                            <div class="mr-3">
+                              <article class="article">
+                                <a
+                                  href="/sre-trade-show-2024"
+                                  class="event-link"
+                                  data-event-title="Trade Show"
+                                  data-event-description="Descrição do Evento Trade Show."
+                                  data-event-gallery="trade_show"
+                                  data-event-photos-quantity="131"
+                                >
+                                  <figure>
+                                    <img
+                                      class="full-image"
+                                      src="assets/img/noticias/tradeShow.jpg"
+                                      alt="Trade Show"
+                                      title="Trade Show"
+                                    />
+                                  </figure>
+                                  <div class="article__detail">
+                                    <h5>
+                                      34ª SRE Trade Show 2024 (Rio de Janeiro)
+                                    </h5>
+                                    <p class="text-white">Eventos</p>
+                                    <span class="mt-2 d-block text-right"
+                                      ><i class="icon-arrow-right-2"></i
+                                    ></span>
+                                  </div>
+                                </a>
+                              </article>
+                            </div>
+
+                            <div class="mr-3">
+                              <article class="article">
+                                <a href="/e4-expoapras_2024_(curitiba)">
+                                  <figure>
+                                    <img
+                                      class="full-image"
+                                      src="assets/img/noticias/expoApras.jpg"
+                                      alt="ExpoApras 2024 (Curitiba)"
+                                      title="ExpoApras 2024 (Curitiba)"
+                                    />
+                                  </figure>
+                                  <div class="article__detail">
+                                    <h5>ExpoApras 2024 (Curitiba)</h5>
+                                    <p class="text-white">Eventos</p>
+                                    <span class="mt-2 d-block text-right"
+                                      ><i class="icon-arrow-right-2"></i
+                                    ></span>
+                                  </div>
+                                </a>
+                              </article>
+                            </div>
+
+                            <div class="mr-3">
+                              <article class="article">
+                                <a
+                                  href="/e3-exposuper_2024_(balneario_comboriu)"
+                                >
+                                  <figure>
+                                    <img
+                                      class="full-image"
+                                      src="assets/img/noticias/expoSuperAcats.jpg"
+                                      alt="Expo Super"
+                                      title="AGAS"
+                                    />
+                                  </figure>
+                                  <div class="article__detail">
+                                    <h5>ExpoSuper 2024 (Balneário Comboriú)</h5>
+                                    <p class="text-white">Eventos</p>
+                                    <span class="mt-2 d-block text-right"
+                                      ><i class="icon-arrow-right-2"></i
+                                    ></span>
+                                  </div>
+                                </a>
+                              </article>
+                            </div>
+
+                            <div class="mr-3">
+                              <article class="article">
+                                <a href="/apas-show-2024">
+                                  <figure>
+                                    <img
+                                      class="full-image"
+                                      src="assets/img/noticias/apasShow.jpg"
+                                      alt="AGAS"
+                                      title="AGAS"
+                                    />
+                                  </figure>
+                                  <div class="article__detail">
+                                    <h5>APAS SHOW 2024 (São Paulo)</h5>
+                                    <p class="text-white">Eventos</p>
+                                    <span class="mt-2 d-block text-right"
+                                      ><i class="icon-arrow-right-2"></i
+                                    ></span>
+                                  </div>
+                                </a>
+                              </article>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div
+                              class="container-fluid text-right mt-md-0 mt-3"
+                            >
+                              <a
+                                href="javascript:"
+                                class="btn btn-primary btn-sm"
+                                >Ver tudo</a
+                              >
+                            </div> -->
+                      </section>
+                      <script type="text/javascript">
+                        window.__$components = window.__$components || [];
+                        (function () {
+                          window.__$components.push({
+                            fn: function () {
+                              var $el = $("#zSlider__news");
+                              setTimeout(function () {
+                                $(".section__news .spinner-grow").css({
+                                  opacity: 0,
+                                  visibility: "hidden",
+                                  "z-index": -1,
+                                });
+
+                                $el.slick({
+                                  dots: true,
+                                  arrows: false,
+                                  speed: 800,
+                                  autoplay: true,
+                                  focusOnSelect: true,
+                                  centerMode: true,
+                                  centerPadding: "150px",
+                                  autoplaySpeed: 5000,
+                                  slidesToShow: 4,
+                                  slidesToScroll: 4,
+                                  infinite: true,
+                                  responsive: [
+                                    {
+                                      breakpoint: 1025,
+                                      settings: {
+                                        slidesToShow: 3,
+                                        slidesToScroll: 1,
+                                      },
+                                    },
+                                    {
+                                      breakpoint: 899,
+                                      settings: {
+                                        slidesToShow: 3,
+                                        slidesToScroll: 1,
+                                      },
+                                    },
+                                    {
+                                      breakpoint: 600,
+                                      settings: {
+                                        centerMode: false,
+                                        centerPadding: "0",
+                                        slidesToShow: 1,
+                                        slidesToScroll: 1,
+                                      },
+                                    },
+                                  ],
+                                });
+                                $el.css({
+                                  opacity: 1,
+                                  visibility: "visible",
+                                });
+                                $(".section__news .spinner-grow").hide();
+                              }, 100);
+                            },
+                          });
+                        })();
+                      </script>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="is-section is-box is-section-20 section__key texture-background"
+        >
+          <div class="is-boxes">
+            <div class="is-box-centered">
+              <div class="container-fluid is-container">
+                <style>
+                  @media (max-width: 770px) {
+                    .slidervideos {
+                      height: 300px;
+                    }
+                  }
+                </style>
+                <div class="row zRow">
+                  <div
+                    class="zCol col-md-6 sliderVideos"
+                    style="height: 500px; overflow: hidden"
+                  >
+                    <section data-component="true" class="h-100 w-100">
+                      <div
+                        class="section__gallery h-100 w-100"
+                        data-component="_zMovieGallery"
+                      >
+                        <style>
+                          .slider-single div {
+                            width: 100%; /* Define a largura da div */
+                            height: auto; /* Define a altura da div */
+                            overflow: hidden; /* Esconde o conteúdo que ultrapassa as bordas da div */
+                            position: relative;
+                            background: #fff;
+                          }
+                          .slider-nav div {
+                            width: 100%; /* Define a largura da div */
+                            height: 200px; /* Define a altura da div */
+                            overflow: hidden; /* Esconde o conteúdo que ultrapassa as bordas da div */
+                            position: relative;
+                            margin-right: 10px;
+                          }
+                          .slider-single div video {
+                            position: absolute; /* Posiciona o vídeo de forma absoluta dentro da div */
+                            top: 50%; /* Centraliza verticalmente */
+                            left: 50%; /* Centraliza horizontalmente */
+                            height: 100%; /* Faz com que a altura do vídeo se ajuste à altura da div */
+                            width: auto; /* Mantém a proporção do vídeo */
+                            transform: translate(-50%, -50%);
+                          }
+                          .slider-nav div video {
+                            max-width: 100%;
+                            height: 100px;
+                            max-height: 100px;
+                          }
+                          .slider-nav .slick-slide {
+                            cursor: pointer;
+                          }
+                        </style>
+                        <div
+                          class="row"
+                          style="
+                            max-height: 100%;
+                            max-width: 100%;
+                            height: 100%;
+                            width: 100%;
+                          "
+                        >
+                          <style>
+                            .slider-single div {
+                              width: 100%; /* Define a largura da div */
+                              height: 400px; /* Define a altura da div */
+                              overflow: hidden; /* Esconde o conteúdo que ultrapassa as bordas da div */
+                              position: relative;
+                              background: #fff;
+                            }
+                            .slider-nav div {
+                              width: 100%; /* Define a largura da div */
+                              height: 200px; /* Define a altura da div */
+                              overflow: hidden; /* Esconde o conteúdo que ultrapassa as bordas da div */
+                              position: relative;
+                              margin-right: 10px;
+                            }
+                            .slider-single div video {
+                              position: absolute; /* Posiciona o vídeo de forma absoluta dentro da div */
+                              top: 50%; /* Centraliza verticalmente */
+                              left: 50%; /* Centraliza horizontalmente */
+                              height: 100%; /* Faz com que a altura do vídeo se ajuste à altura da div */
+                              width: auto; /* Mantém a proporção do vídeo */
+                              transform: translate(-50%, -50%);
+                            }
+                            .slider-nav div video {
+                              max-width: 100%;
+                              height: 100px;
+                              max-height: 100px;
+                            }
+                            .slider-nav .slick-slide {
+                              cursor: pointer;
+                            }
+                            .swiper-container-video {
+                              width: 100%;
+                              height: 100%;
+                            }
+                            .swiper-container-video {
+                              position: relative;
+                            }
+                            .swiper-slide-video {
+                              text-align: center;
+                              font-size: 18px;
+                              background: #fff;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              cursor: pointer;
+                            }
+
+                            .swiper-slide-video img {
+                              display: block;
+                              width: 100%;
+                              height: 100%;
+                              object-fit: cover;
+                            }
+                            .swiper-slide-video video {
+                              display: block;
+                              width: 100%;
+                              height: 100%;
+                              object-fit: cover;
+                            }
+                            .video-single {
+                              max-height: 75%;
+                            }
+                            .video-single video {
+                              display: block;
+                              width: 100%;
+                              height: 350px !important;
+                              max-height: 100% !important;
+                              object-fit: cover;
+                            }
+                          </style>
+                          <div class="h-100 w-100">
+                            <div
+                              class="h-75 w-100 video-single"
+                              style="max-height: 75%"
+                            >
+                              <video
+                                src="videos/institucional_2024.mp4"
+                                class="h-100 w-100 swiper-video"
+                                autoplay
+                                controls
+                                muted
+                              ></video>
+                              <video
+                                class="h-100 w-100 swiper-video"
+                                style="display: none; max-height: 100%"
+                                src="videos/feira.mp4"
+                                controls
+                                muted
+                              ></video>
+                              <video
+                                class="h-100 w-100 swiper-video"
+                                src="videos/video3.mp4"
+                                style="display: none"
+                                controls
+                                muted
+                              ></video>
+                            </div>
+                            <div class="h-25 w-100 mt-2">
+                              <div
+                                class="swiper-container-video w-100"
+                                style="overflow: hidden"
+                              >
+                                <div
+                                  class="swiper-wrapper w-100 h-100"
+                                  style="display: flex"
+                                >
+                                  <div
+                                    class="swiper-slide swiper-slide-video"
+                                    data-video-ref="videos/institucional_2024.mp4"
+                                  >
+                                    <img
+                                      data-video-ref="videos/institucional_2024.mp4"
+                                      class="swiper-imageRef"
+                                      src="assets/img/imgVideos/2.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div
+                                    class="swiper-slide swiper-slide-video"
+                                    data-video-ref="videos/feira.mp4"
+                                  >
+                                    <img
+                                      data-video-ref="videos/feira.mp4"
+                                      class="swiper-imageRef"
+                                      src="assets/img/imgVideos/1.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div
+                                    class="swiper-slide swiper-slide-video"
+                                    data-video-ref="videos/video3.mp4"
+                                  >
+                                    <img
+                                      data-video-ref="videos/video3.mp4"
+                                      class="swiper-imageRef"
+                                      src="assets/img/imgVideos/3.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  class="swiper-pagination"
+                                  style="
+                                    bottom: 0px !important;
+                                    margin-bottom: 0 !important;
+                                  "
+                                ></div>
+                              </div>
+                            </div>
+                            <!-- <div
+                              class="h-75 w-100 slider slider-single"
+                              style="background-color: #fff"
+                            >
+                              <div class="h-100">
+                                <video
+                                  src="./videos/inst15s..mp4"
+                                  autoplay
+                                  muted
+                                  loop
+                                  class="video-slider h-100 w-100"
+                                  style="max-height: 100%; overflow: hidden"
+                                  loading="lazy"
+                                ></video>
+                              </div>
+                              <div class="h-100">
+                                <video
+                                  src="./videos/feira.mp4"
+                                  muted
+                                  loop
+                                  autoplay
+                                  loading="lazy"
+                                  class="video-slider h-100 w-100"
+                                  style="max-height: 100%; overflow: hidden"
+                                ></video>
+                              </div>
+                              <div class="h-100">
+                                <video
+                                  src="./videos/video3.mp4"
+                                  muted
+                                  autoplay
+                                  loop
+                                  loading="lazy"
+                                  class="video-slider h-100 w-100"
+                                  style="max-height: 100%; overflow: hidden"
+                                ></video>
+                              </div>
+                            </div> -->
+
+                            <!-- <div
+                              class="h-25 w-100 slider slider-nav py-1 px-3"
+                              style="background-color: transparent"
+                            >
+                              <div
+                                class="h-100"
+                                style="
+                                  margin-right: 20px;
+                                  background: url('assets/img/imgVideos/2.jpg');
+                                  background-repeat: no-repeat;
+                                  background-size: cover;
+                                  background-postion: center;
+                                "
+                              ></div>
+                              <div
+                                class="h-100"
+                                style="
+                                  margin-right: 20px;
+                                  background: url('assets/img/imgVideos/1.jpg');
+                                  background-repeat: no-repeat;
+                                  background-size: cover;
+                                  background-postion: center;
+                                "
+                              ></div>
+                              <div
+                                class="h-100"
+                                style="
+                                  margin-right: 20px;
+                                  background: url('assets/img/imgVideos/3.jpg');
+                                  background-repeat: no-repeat;
+                                  background-size: cover;
+                                  background-postion: center;
+                                "
+                              ></div>
+                            </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="zCol col-md-6">
+                    <p
+                      data-aos="fade-left"
+                      data-aos-delay="0"
+                      data-aos-duration="800"
+                    >
+                      <span
+                        style="color: #026338; font-size: 1.75rem"
+                        class="font--bree-light"
+                        >Inovação, Qualidade, Honestidade</span
+                      >
+                    </p>
+
+                    <h2
+                      class="font--bree-light"
+                      data-aos-delay="100"
+                      data-aos="fade-left"
+                      data-aos-duration="800"
+                    >
+                      <span style="font-weight: normal; font-size: 2.5rem"
+                        >a chave para<br />o nosso sucesso</span
+                      >
+                    </h2>
+                    <div class="spacer height-40"></div>
+                    <div class="spacer height-20"></div>
+                    <p></p>
+                    <div
+                      data-aos="fade-left"
+                      data-aos-delay="400"
+                      data-aos-duration="800"
+                      style="text-align: justify !important"
+                    >
+                      <span style="font-size: 1.5rem"
+                        >Fundada em 1999, no Estado do Rio Grande do Sul, pelos
+                        irmãos Marcelo Marques e Claudiomar Marques, a empresa
+                        Marquespan vem se destacando no cenário nacional por
+                        seus valores como inovação, qualidade e
+                        honestidade.</span
+                      >
+                      <br />
+                    </div>
+                    <div class="spacer height-60"></div>
+                    <div class="spacer height-20"></div>
+                    <p></p>
+
+                    <div
+                      data-aos="fade-up"
+                      data-aos-delay="400"
+                      data-aos-duration="600"
+                    >
+                      <span
+                        ><a
+                          href="/empresa"
+                          class="btn btn-secondary is-rounded-30 btn-sm"
+                          title=""
+                          >a nossa história</a
+                        ></span
+                      >
+                      &nbsp;
+                      <span
+                        ><a
+                          href="/linha-tradicional"
+                          class="ml-md-3 ml-0 btn btn-link btn-sm text-info p-0 d-inline-flex align-items-center"
+                          title=""
+                          >Os nossos produtos&nbsp;&nbsp;<i
+                            class="icon-arrow-right-2"
+                          ></i></a
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section__photos">
+      <div class="row no-gutters align-items-stretch">
+        <div
+          class="col-md-3 col-sm-6 col-6 photo"
+          style="
+            background: url('assets/img/homeProdutos/frances.jpg');
+            background-image: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1)
+              ),
+              url('assets/img/homeProdutos/frances.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 50vh;
+          "
+          data-aos="zoom-in"
+          data-aos-delay="500"
+          data-aos-duration="700"
+          data-aos-once="true"
+        ></div>
+        <div
+          class="col-md-3 col-sm-6 col-6 photo"
+          style="
+            background: url('assets/img/homeProdutos/leite.jpg');
+            background-image: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1)
+              ),
+              url('assets/img/homeProdutos/leite.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 50vh;
+          "
+          data-aos="zoom-in"
+          data-aos-delay="500"
+          data-aos-duration="700"
+          data-aos-once="true"
+        ></div>
+        <div
+          class="col-md-6 col-sm-12 col-12 photo"
+          style="
+            background: url('assets/img/homeProdutos/croissant.jpg');
+            background-image: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1)
+              ),
+              url('assets/img/homeProdutos/croissant.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 50vh;
+          "
+          data-aos="zoom-in"
+          data-aos-delay="500"
+          data-aos-once="true"
+          data-aos-duration="700"
+        ></div>
+        <div
+          class="col-md-6 col-sm-12 col-12 photo"
+          style="
+            background: url('assets/img/homeProdutos/croissant.jpg');
+            background-image: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1)
+              ),
+              url('assets/img/homeProdutos/croissant.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 50vh;
+          "
+          data-aos="zoom-in"
+          data-aos-delay="500"
+          data-aos-duration="700"
+          data-aos-once="true"
+        ></div>
+        <div
+          class="col-md-3 col-sm-6 col-6 photo"
+          style="
+            background: url('assets/img/homeProdutos/bolo.jpg');
+            background-image: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1)
+              ),
+              url('assets/img/homeProdutos/bolo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 50vh;
+          "
+          data-aos="zoom-in"
+          data-aos-delay="500"
+          data-aos-duration="700"
+          data-aos-once="true"
+        ></div>
+        <div
+          class="col-md-3 col-sm-6 col-6 photo"
+          style="
+            background: url('assets/img/homeProdutos/queijo.jpg');
+            background-image: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1)
+              ),
+              url('assets/img/homeProdutos/queijo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 50vh;
+          "
+          data-aos="zoom-in"
+          data-aos-delay="500"
+          data-aos-duration="700"
+          data-aos-once="true"
+        ></div>
+      </div>
+      <div
+        class="photos--btn d-flex align-items-center justify-content-center flex-sm-row flex-column"
+        data-aos="fade-in-up"
+        data-aos-delay="500"
+        data-aos-duration="900"
+      >
+        <a
+          class="d-flex align-items-center btn btn-secondary mx-3"
+          href="/empresa"
+          >A empresa <i class="icon-arrow-right-2 ml-3"></i
+        ></a>
+        <a
+          class="d-flex align-items-center btn btn-white text-secondary mx-3 mt-sm-0 mt-3"
+          href="/linha-tradicional"
+          >Os nossos produtos</a
+        >
+      </div>
+    </section>
+  </section>
+</main>
+
+<script type="text/javascript" src="assets/js/script.js" defer></script>
+
+<script type="text/javascript">
+  if (typeof revslider_showDoubleJqueryError === "undefined") {
+    function revslider_showDoubleJqueryError(sliderID) {
+      console.log(
+        "You have some jquery.js library include that comes after the Slider Revolution files js inclusion."
+      );
+      console.log("To fix this, you can:");
+      console.log(
+        "1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on"
+      );
+      console.log("2. Find the double jQuery.js inclusion and remove it");
+      return "Double Included jQuery Library";
+    }
+  }
+</script>
+
+<script
+  type="text/javascript"
+  src="assets/plugins/rev/js/rbtools.min.js"
+  defer
+></script>
+<script
+  type="text/javascript"
+  src="assets/plugins/rev/js/rs6.min.js"
+  defer
+></script>
+
+<script
+  type="text/javascript"
+  src="assets/scripts/pages/home.index.min.js"
+  defer
+></script>
+
+<script src="assets/plugins/swiper/swiper-bundle.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script> -->
+<script>
+  const swiperVideo = new Swiper(".swiper-container-video", {
+    slidesPerView: 2,
+    //centeredSlides: true,
+    spaceBetween: 15,
+    freeMode: true,
+    autoplay: {
+      delay: 15000,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      bulletClass: "swiper-pagination-bullet",
+      bulletActiveClass: "swiper-pagination-bullet-active",
+    },
+    on: {
+      slideChangeTransitionStart: function (e) {
+        let videos = document.querySelectorAll(".swiper-video");
+        videos.forEach((video) => {
+          video.currentTime = 0;
+          video.pause();
+          video.style.display = "none";
+          if (
+            document
+              .querySelectorAll(".swiper-imageRef")
+              [e.activeIndex].getAttribute("data-video-ref") ===
+            video.getAttribute("src")
+          ) {
+            video.style.display = "block";
+            video.play();
+          }
+        });
+      },
+    },
+  });
+  $(".swiper-slide-video").on("click", function (e) {
+    let videos = document.querySelectorAll(".swiper-video");
+    videos.forEach((video) => {
+      video.currentTime = 0;
+      video.pause();
+      video.style.display = "none";
+      if (
+        e.target.getAttribute("data-video-ref") == video.getAttribute("src")
+      ) {
+        video.style.display = "block";
+        video.play();
+      }
+    });
+  });
+</script>
+<script>
+  document.querySelector(".p-swiper").classList.add("p-swiper-active");
+  document.querySelector(".title-swiper").classList.add("title-swiper-active");
+  const swiper = new Swiper(".swiper-container", {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+    },
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    speed: 2000,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      bulletClass: "swiper-pagination-bullet",
+      bulletActiveClass: "swiper-pagination-bullet-active",
+    },
+    on: {
+      slideChangeTransitionStart: function () {
+        swiper.slides[swiper.previousIndex]
+          .querySelector(".p-swiper")
+          .classList.remove("p-swiper-active");
+        swiper.slides[swiper.previousIndex]
+          .querySelector(".title-swiper")
+          .classList.remove("title-swiper-active");
+        swiper.slides[swiper.activeIndex]
+          .querySelector(".p-swiper")
+          .classList.add("p-swiper-active");
+        swiper.slides[swiper.activeIndex]
+          .querySelector(".title-swiper")
+          .classList.add("title-swiper-active");
+      },
+    },
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    if (!window.location.hash) {
+      $("#videoModal").fadeIn(0, function () {
+        $("#videoModal").css("visibility", "hidden");
+        $(".modal-content").addClass("active");
+      });
+    }
+    $("#closeBtn").click(function () {
+      $(".modal-content").removeClass("active");
+      $("#videoModal").fadeOut(500, function () {
+        $("#popupVideo")[0].pause();
+      });
+    });
+    $("#videoModal").click(function (event) {
+      if (event.target !== this) return;
+      $(".modal-content").removeClass("active");
+      $("#videoModal").fadeOut(500, function () {
+        $("#popupVideo")[0].pause();
+      });
+    });
+
+    $(".modal-content").click(function (event) {
+      event.stopPropagation();
+    });
+
+    const video = $("#popupVideo")[0];
+
+    $("#popupVideo").on("dblclick", function () {
+      if (video.muted) {
+        video.muted = false;
+      } else {
+        video.muted = true;
+      }
+    });
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      AOS.init();
+    }, 500);
+  });
+
+  AOS.init();
+
+  $(document).ready(() => {
+    $(".redirect-link").on("click", function (event) {
+      event.preventDefault();
+      window.location.hash = $(this).attr("href");
+    });
+    if (window.location.hash) {
+      const targetId = window.location.hash.substring(1);
+      window.location.hash = 0;
+      window.location.hash = targetId;
+    }
+  });
+</script>
+
+<script>
+  $(".slider-single").slick({
+    slidesToShow: 1,
+    arrows: true,
+    fade: true,
+    infinite: true,
+    useTransform: true,
+  });
+
+  $(".slider-nav")
+    .on("init", function (event, slick) {
+      $(".slider-nav .slick-slide.slick-current").addClass("is-active");
+    })
+    .slick({
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      dots: false,
+      speed: 400,
+      arrows: false,
+      focusOnSelect: false,
+      infinite: false,
+    });
+
+  $(".slider-nav").on("afterChange", function (event, slick, currentSlide) {
+    $(".slider-single").slick("slickGoTo", currentSlide);
+    console.log(document.querySelectorAll(".video-slider")[currentSlide + 1]);
+    document.querySelectorAll(".video-slider")[currentSlide + 1].play();
+    document.querySelectorAll(".video-slider")[currentSlide].currentTime = 0;
+    document.querySelectorAll(".video-slider")[currentSlide].pause();
+  });
+  $(".slider-nav").on("click", ".slick-slide", function (e) {
+    var index = $(this).data("slick-index"); // Obtém o índice do slide clicado
+    $(".slider-nav").slick("slickGoTo", index); // Vai para o slide clicado e o centraliza
+  });
+</script>
+<script>
+  document.getElementById("preload").style.display = "none";
+  const video = document.getElementById("popupVideo");
+
+  video.addEventListener("play", function () {
+    $("#videoModal").css("visibility", "visible");
+  });
+</script>

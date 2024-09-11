@@ -1,0 +1,71 @@
+#rev_slider_32_1_wrapper h1,
+#rev_slider_32_1_wrapper h2,
+#rev_slider_32_1_wrapper p {
+  text-shadow: 1px 1px 2px black;
+}
+
+#rev_slider_32_1_wrapper h2 {
+  bottom: 125px !important;
+}
+
+.txtContato::placeholder {
+  color: #979797;
+}
+
+.regiaoSelect {
+  position: absolute;
+  z-index: 10;
+  top: 100px;
+  left: 70px;
+  font-size: 1.25rem;
+}
+
+.regiaoSelect label {
+  font-weight: 600;
+  color: #026338;
+}
+.texture-background {
+  background: url("assets/img/Banners/textura_background.jpeg");
+  background-color: rgba(255, 255, 255, 0.096);
+  background-position: center;
+}
+.regiaoSelect select {
+  background: #00000000;
+  border: none;
+}
+
+@media screen and (max-width: 599px) {
+  .regiaoSelect {
+    top: 10px;
+    left: 82px;
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  #titleProdCat {
+    margin-top: 40px;
+  }
+
+  #rev_slider_32_1_wrapper h2 {
+    top: -70px !important;
+  }
+}
+
+@media (max-width: 599px) {
+  #ProductsIndex {
+    position: relative !important;
+  }
+}
+
+.info .address p a {
+  color: #979797;
+}
+
+.address p i {
+  margin: 0 10px 0 0;
+  font-size: 15px;
+}
+
+.address h4 {
+  margin-top: 18px;
+}

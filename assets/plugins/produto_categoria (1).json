@@ -1,0 +1,78 @@
+[
+  {
+    "type": "header",
+    "version": "5.2.1",
+    "comment": "Export to JSON plugin for PHPMyAdmin"
+  },
+  { "type": "database", "name": "marquespan" },
+  {
+    "type": "table",
+    "name": "produto_categoria",
+    "database": "marquespan",
+    "data": [
+      {
+        "idProdCat": "1",
+        "nomeCat": "Linha Tradicional",
+        "textoCat": "Texto Linha Tradicional",
+        "imgCat": "cat_567847752.jpg",
+        "ordemCat": "1"
+      },
+      {
+        "idProdCat": "2",
+        "nomeCat": "Linha Extra",
+        "textoCat": "texto linha extra",
+        "imgCat": "cat_1376927768.jpg",
+        "ordemCat": "2"
+      },
+      {
+        "idProdCat": "3",
+        "nomeCat": "Salgados / Pão de Queijo",
+        "textoCat": "texto linha salgados",
+        "imgCat": "cat_480971365.jpg",
+        "ordemCat": "5"
+      },
+      {
+        "idProdCat": "4",
+        "nomeCat": "Tortas",
+        "textoCat": "texto tortas",
+        "imgCat": "cat_1412176606.jpg",
+        "ordemCat": "3"
+      },
+      {
+        "idProdCat": "5",
+        "nomeCat": "Linha Premium",
+        "textoCat": "",
+        "imgCat": "cat_1971283783.jpg",
+        "ordemCat": "4"
+      },
+      {
+        "idProdCat": "6",
+        "nomeCat": "Recheios",
+        "textoCat": "",
+        "imgCat": "cat_838812512.jpg",
+        "ordemCat": "6"
+      },
+      {
+        "idProdCat": "7",
+        "nomeCat": "Salgados",
+        "textoCat": "",
+        "imgCat": "cat_483607666.jpg",
+        "ordemCat": "5"
+      },
+      {
+        "idProdCat": "8",
+        "nomeCat": "Linha Premium",
+        "textoCat": "",
+        "imgCat": "cat_1270860418.jpg",
+        "ordemCat": "4"
+      },
+      {
+        "idProdCat": "9",
+        "nomeCat": "Linha Confeitaria",
+        "textoCat": "",
+        "imgCat": "cat_525622169.jpg",
+        "ordemCat": null
+      }
+    ]
+  }
+]
